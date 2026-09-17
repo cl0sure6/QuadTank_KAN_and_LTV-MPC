@@ -643,7 +643,7 @@
         19.0
       ],
       "violation_fraction": 0.0,
-      "median_dV": -108.58317099588021,
+      "median_dV": -108.69574594417372,
       "note": "V is the local Lyapunov function from (S1); a nonzero violation fraction far from the equilibrium is expected and does not by itself imply instability"
     },
     "monte_carlo_robustness": {
@@ -670,9 +670,9 @@
         "settling_window_ignored_s": 20.0,
         "overflow_fraction": 0.0,
         "dryout_fraction": 0.10416666666666667,
-        "max_level_observed_cm": 15.903148460075892,
+        "max_level_observed_cm": 15.879136027963158,
         "min_level_observed_cm": 0.0,
-        "mean_input_saturation_fraction": 0.05958333333333332
+        "mean_input_saturation_fraction": 0.05981249999999999
       },
       "LTV-MPC": {
         "n_tasks": 48,
@@ -699,7 +699,7 @@
         "dryout_fraction": 0.125,
         "max_level_observed_cm": 15.011300488548354,
         "min_level_observed_cm": 0.0,
-        "mean_input_saturation_fraction": 0.05554166666666668
+        "mean_input_saturation_fraction": 0.05579166666666666
       }
     }
   },
@@ -1346,8 +1346,8 @@
         1.0,
         19.0
       ],
-      "violation_fraction": 0.0035,
-      "median_dV": -78.22965605616264,
+      "violation_fraction": 0.00075,
+      "median_dV": -82.02837564880065,
       "note": "V is the local Lyapunov function from (S1); a nonzero violation fraction far from the equilibrium is expected and does not by itself imply instability"
     },
     "monte_carlo_robustness": {
@@ -1372,11 +1372,11 @@
       "Symbolic KAN": {
         "n_tasks": 48,
         "settling_window_ignored_s": 20.0,
-        "overflow_fraction": 0.020833333333333332,
+        "overflow_fraction": 0.0,
         "dryout_fraction": 0.0,
-        "max_level_observed_cm": 22.71040308719276,
+        "max_level_observed_cm": 18.497663973911553,
         "min_level_observed_cm": 0.0017059823053885666,
-        "mean_input_saturation_fraction": 0.04761458333333334
+        "mean_input_saturation_fraction": 0.043041666666666666
       },
       "LTV-MPC": {
         "n_tasks": 48,
@@ -1401,9 +1401,9 @@
         "settling_window_ignored_s": 20.0,
         "overflow_fraction": 0.0,
         "dryout_fraction": 0.0,
-        "max_level_observed_cm": 17.699248130555862,
+        "max_level_observed_cm": 17.905654130250642,
         "min_level_observed_cm": 0.0038095793482440235,
-        "mean_input_saturation_fraction": 0.03573958333333333
+        "mean_input_saturation_fraction": 0.036000000000000004
       }
     }
   }

@@ -158,13 +158,13 @@
             "rmse_h12_cm": 3.801
           },
           "Symbolic KAN": {
-            "peak_level_cm": 19.492,
+            "peak_level_cm": 19.49,
             "peak_tank": 2,
             "overflow": false,
             "violation_area_cm_s": 0.0,
             "time_over_limit_s": 0.0,
-            "max_overshoot_above_ref_cm": -0.008,
-            "rmse_h12_cm": 3.832
+            "max_overshoot_above_ref_cm": -0.01,
+            "rmse_h12_cm": 3.87
           },
           "MLP (32-32)": {
             "peak_level_cm": 19.489,
@@ -173,7 +173,7 @@
             "violation_area_cm_s": 0.0,
             "time_over_limit_s": 0.0,
             "max_overshoot_above_ref_cm": -0.011,
-            "rmse_h12_cm": 3.826
+            "rmse_h12_cm": 3.838
           },
           "MLP (8)": {
             "peak_level_cm": 19.489,
@@ -182,34 +182,34 @@
             "violation_area_cm_s": 0.0,
             "time_over_limit_s": 0.0,
             "max_overshoot_above_ref_cm": -0.011,
-            "rmse_h12_cm": 3.968
+            "rmse_h12_cm": 3.965
           },
           "DeepONet": {
-            "peak_level_cm": 19.476,
-            "peak_tank": 2,
-            "overflow": false,
-            "violation_area_cm_s": 0.0,
-            "time_over_limit_s": 0.0,
-            "max_overshoot_above_ref_cm": -0.024,
-            "rmse_h12_cm": 4.396
-          },
-          "Poly ridge (deg 2)": {
-            "peak_level_cm": 19.489,
-            "peak_tank": 2,
-            "overflow": false,
-            "violation_area_cm_s": 0.0,
-            "time_over_limit_s": 0.0,
-            "max_overshoot_above_ref_cm": -0.011,
-            "rmse_h12_cm": 4.073
-          },
-          "Poly ridge (deg 3)": {
             "peak_level_cm": 19.487,
             "peak_tank": 2,
             "overflow": false,
             "violation_area_cm_s": 0.0,
             "time_over_limit_s": 0.0,
             "max_overshoot_above_ref_cm": -0.013,
-            "rmse_h12_cm": 3.962
+            "rmse_h12_cm": 4.356
+          },
+          "Poly ridge (deg 2)": {
+            "peak_level_cm": 19.49,
+            "peak_tank": 2,
+            "overflow": false,
+            "violation_area_cm_s": 0.0,
+            "time_over_limit_s": 0.0,
+            "max_overshoot_above_ref_cm": -0.01,
+            "rmse_h12_cm": 4.065
+          },
+          "Poly ridge (deg 3)": {
+            "peak_level_cm": 19.489,
+            "peak_tank": 2,
+            "overflow": false,
+            "violation_area_cm_s": 0.0,
+            "time_over_limit_s": 0.0,
+            "max_overshoot_above_ref_cm": -0.011,
+            "rmse_h12_cm": 3.951
           },
           "Gain-scheduled LQR": {
             "peak_level_cm": 19.491,
@@ -364,13 +364,13 @@
             "rmse_h12_cm": 3.394
           },
           "Symbolic KAN": {
-            "peak_level_cm": 20.411,
+            "peak_level_cm": 16.776,
             "peak_tank": 1,
-            "overflow": true,
-            "violation_area_cm_s": 2.499,
-            "time_over_limit_s": 9.3,
-            "max_overshoot_above_ref_cm": 5.411,
-            "rmse_h12_cm": 3.502
+            "overflow": false,
+            "violation_area_cm_s": 0.0,
+            "time_over_limit_s": 0.0,
+            "max_overshoot_above_ref_cm": 1.776,
+            "rmse_h12_cm": 3.348
           },
           "MLP (32-32)": {
             "peak_level_cm": 15.572,
@@ -459,58 +459,58 @@
             "rmse_h12_cm": 4.969
           },
           "Symbolic KAN": {
-            "peak_level_cm": 28.879,
+            "peak_level_cm": 20.163,
             "peak_tank": 1,
             "overflow": true,
-            "violation_area_cm_s": 873.747,
-            "time_over_limit_s": 167.5,
-            "max_overshoot_above_ref_cm": 9.379,
-            "rmse_h12_cm": 6.004
+            "violation_area_cm_s": 9.676,
+            "time_over_limit_s": 90.9,
+            "max_overshoot_above_ref_cm": 0.663,
+            "rmse_h12_cm": 4.936
           },
           "MLP (32-32)": {
-            "peak_level_cm": 20.489,
+            "peak_level_cm": 20.217,
             "peak_tank": 1,
             "overflow": true,
-            "violation_area_cm_s": 39.916,
-            "time_over_limit_s": 119.8,
-            "max_overshoot_above_ref_cm": 0.989,
-            "rmse_h12_cm": 4.976
+            "violation_area_cm_s": 14.171,
+            "time_over_limit_s": 101.1,
+            "max_overshoot_above_ref_cm": 0.717,
+            "rmse_h12_cm": 4.968
           },
           "MLP (8)": {
-            "peak_level_cm": 20.91,
+            "peak_level_cm": 20.184,
             "peak_tank": 1,
             "overflow": true,
-            "violation_area_cm_s": 54.084,
-            "time_over_limit_s": 156.6,
-            "max_overshoot_above_ref_cm": 1.41,
-            "rmse_h12_cm": 4.906
+            "violation_area_cm_s": 11.337,
+            "time_over_limit_s": 94.6,
+            "max_overshoot_above_ref_cm": 0.684,
+            "rmse_h12_cm": 4.987
           },
           "DeepONet": {
-            "peak_level_cm": 23.66,
+            "peak_level_cm": 20.104,
             "peak_tank": 1,
             "overflow": true,
-            "violation_area_cm_s": 201.456,
-            "time_over_limit_s": 107.7,
-            "max_overshoot_above_ref_cm": 4.16,
-            "rmse_h12_cm": 5.226
+            "violation_area_cm_s": 5.203,
+            "time_over_limit_s": 74.9,
+            "max_overshoot_above_ref_cm": 0.604,
+            "rmse_h12_cm": 4.976
           },
           "Poly ridge (deg 2)": {
-            "peak_level_cm": 32.178,
+            "peak_level_cm": 20.185,
             "peak_tank": 1,
             "overflow": true,
-            "violation_area_cm_s": 1658.117,
-            "time_over_limit_s": 165.7,
-            "max_overshoot_above_ref_cm": 12.678,
-            "rmse_h12_cm": 7.604
+            "violation_area_cm_s": 11.546,
+            "time_over_limit_s": 95.6,
+            "max_overshoot_above_ref_cm": 0.685,
+            "rmse_h12_cm": 4.938
           },
           "Poly ridge (deg 3)": {
-            "peak_level_cm": 20.256,
+            "peak_level_cm": 20.179,
             "peak_tank": 1,
             "overflow": true,
-            "violation_area_cm_s": 21.002,
-            "time_over_limit_s": 119.1,
-            "max_overshoot_above_ref_cm": 0.756,
-            "rmse_h12_cm": 4.881
+            "violation_area_cm_s": 11.032,
+            "time_over_limit_s": 94.3,
+            "max_overshoot_above_ref_cm": 0.679,
+            "rmse_h12_cm": 4.949
           },
           "Gain-scheduled LQR": {
             "peak_level_cm": 20.166,

@@ -3,9 +3,9 @@
     "kan_support_curve": [
       {
         "k": 4,
-        "nmae": 6.4125581269015415,
-        "nmae_unconstrained": 8.568187693507804,
-        "flops": 30,
+        "nmae": 6.396071871058754,
+        "nmae_unconstrained": 8.524619651167342,
+        "flops": 38,
         "certificate": {
           "max_spectral_radius": 0.9983892429200321,
           "all_locally_stable": true,
@@ -35,9 +35,9 @@
       },
       {
         "k": 6,
-        "nmae": 7.4259789893484625,
-        "nmae_unconstrained": 8.52663194559603,
-        "flops": 42,
+        "nmae": 7.409706899178268,
+        "nmae_unconstrained": 8.460487317202851,
+        "flops": 50,
         "certificate": {
           "max_spectral_radius": 0.9983892428710313,
           "all_locally_stable": true,
@@ -67,9 +67,9 @@
       },
       {
         "k": 8,
-        "nmae": 6.829193808325443,
-        "nmae_unconstrained": 7.859816145032639,
-        "flops": 49,
+        "nmae": 6.810924621853128,
+        "nmae_unconstrained": 7.782393398239177,
+        "flops": 57,
         "certificate": {
           "max_spectral_radius": 0.9983892429127524,
           "all_locally_stable": true,
@@ -99,9 +99,9 @@
       },
       {
         "k": 12,
-        "nmae": 6.70637166546556,
-        "nmae_unconstrained": 7.36932689433709,
-        "flops": 64,
+        "nmae": 6.686329568054968,
+        "nmae_unconstrained": 7.286955463067428,
+        "flops": 72,
         "certificate": {
           "max_spectral_radius": 0.9983892429269938,
           "all_locally_stable": true,
@@ -131,9 +131,9 @@
       },
       {
         "k": 16,
-        "nmae": 6.37300219360137,
-        "nmae_unconstrained": 7.007505544350735,
-        "flops": 79,
+        "nmae": 6.343277578994304,
+        "nmae_unconstrained": 6.92283532620866,
+        "flops": 87,
         "certificate": {
           "max_spectral_radius": 0.9983892428692207,
           "all_locally_stable": true,
@@ -163,9 +163,9 @@
       },
       {
         "k": 24,
-        "nmae": 6.997490362532535,
-        "nmae_unconstrained": 6.825470531592388,
-        "flops": 109,
+        "nmae": 6.9531736030467535,
+        "nmae_unconstrained": 6.742168736434047,
+        "flops": 117,
         "certificate": {
           "max_spectral_radius": 0.9983892428998126,
           "all_locally_stable": true,
@@ -195,9 +195,9 @@
       },
       {
         "k": 32,
-        "nmae": 7.134556016363404,
-        "nmae_unconstrained": 6.6383137296139685,
-        "flops": 141,
+        "nmae": 7.082470480622017,
+        "nmae_unconstrained": 6.573853166842522,
+        "flops": 149,
         "certificate": {
           "max_spectral_radius": 0.9983892429259532,
           "all_locally_stable": true,
@@ -227,9 +227,9 @@
       },
       {
         "k": 48,
-        "nmae": 6.523709166063603,
-        "nmae_unconstrained": 6.186443363853648,
-        "flops": 205,
+        "nmae": 6.463750152156898,
+        "nmae_unconstrained": 6.117349345727142,
+        "flops": 213,
         "certificate": {
           "max_spectral_radius": 0.9983892428976316,
           "all_locally_stable": true,
@@ -259,9 +259,9 @@
       },
       {
         "k": 64,
-        "nmae": 6.330102853215795,
-        "nmae_unconstrained": 6.107601338911986,
-        "flops": 268,
+        "nmae": 6.256379779860154,
+        "nmae_unconstrained": 6.033889756024009,
+        "flops": 276,
         "certificate": {
           "max_spectral_radius": 0.9983892428986765,
           "all_locally_stable": true,
@@ -291,9 +291,9 @@
       },
       {
         "k": 96,
-        "nmae": 5.944339589941099,
-        "nmae_unconstrained": 5.887591446632615,
-        "flops": 392,
+        "nmae": 5.853683926994748,
+        "nmae_unconstrained": 5.810941118123644,
+        "flops": 400,
         "certificate": {
           "max_spectral_radius": 0.9983892429222984,
           "all_locally_stable": true,
@@ -323,9 +323,9 @@
       },
       {
         "k": 144,
-        "nmae": 5.859420807289429,
-        "nmae_unconstrained": 5.512794494207643,
-        "flops": 580,
+        "nmae": 5.765190868868664,
+        "nmae_unconstrained": 5.435009515269679,
+        "flops": 588,
         "certificate": {
           "max_spectral_radius": 0.998389242928462,
           "all_locally_stable": true,
@@ -357,9 +357,9 @@
     "direct_polynomial_curve": [
       {
         "k": 4,
-        "nmae": 6.4125581269015415,
-        "nmae_unconstrained": 8.568187693507804,
-        "flops": 30,
+        "nmae": 6.396071871058754,
+        "nmae_unconstrained": 8.524619651167342,
+        "flops": 38,
         "certificate": {
           "max_spectral_radius": 0.9983892429200321,
           "all_locally_stable": true,
@@ -389,9 +389,9 @@
       },
       {
         "k": 6,
-        "nmae": 7.4259789893484625,
-        "nmae_unconstrained": 8.52663194559603,
-        "flops": 42,
+        "nmae": 7.409706899178268,
+        "nmae_unconstrained": 8.460487317202851,
+        "flops": 50,
         "certificate": {
           "max_spectral_radius": 0.9983892428710313,
           "all_locally_stable": true,
@@ -421,9 +421,9 @@
       },
       {
         "k": 8,
-        "nmae": 6.829193808325443,
-        "nmae_unconstrained": 7.859816145032639,
-        "flops": 49,
+        "nmae": 6.810924621853128,
+        "nmae_unconstrained": 7.782393398239177,
+        "flops": 57,
         "certificate": {
           "max_spectral_radius": 0.9983892429127524,
           "all_locally_stable": true,
@@ -453,9 +453,9 @@
       },
       {
         "k": 12,
-        "nmae": 6.70637166546556,
-        "nmae_unconstrained": 7.36932689433709,
-        "flops": 64,
+        "nmae": 6.686329568054968,
+        "nmae_unconstrained": 7.286955463067428,
+        "flops": 72,
         "certificate": {
           "max_spectral_radius": 0.9983892429269938,
           "all_locally_stable": true,
@@ -485,9 +485,9 @@
       },
       {
         "k": 16,
-        "nmae": 6.4090340001161366,
-        "nmae_unconstrained": 6.998398469216383,
-        "flops": 79,
+        "nmae": 6.377433354831582,
+        "nmae_unconstrained": 6.913904434702868,
+        "flops": 87,
         "certificate": {
           "max_spectral_radius": 0.9983892428692207,
           "all_locally_stable": true,
@@ -517,9 +517,9 @@
       },
       {
         "k": 24,
-        "nmae": 6.866530681337928,
-        "nmae_unconstrained": 6.79054537521554,
-        "flops": 111,
+        "nmae": 6.814084766623939,
+        "nmae_unconstrained": 6.703111413365609,
+        "flops": 119,
         "certificate": {
           "max_spectral_radius": 0.9983892428733161,
           "all_locally_stable": true,
@@ -549,9 +549,9 @@
       },
       {
         "k": 32,
-        "nmae": 6.873921861336119,
-        "nmae_unconstrained": 6.658161509612939,
-        "flops": 144,
+        "nmae": 6.81325025720077,
+        "nmae_unconstrained": 6.593338541543118,
+        "flops": 152,
         "certificate": {
           "max_spectral_radius": 0.9983892428886108,
           "all_locally_stable": true,
@@ -581,9 +581,9 @@
       },
       {
         "k": 48,
-        "nmae": 6.7041969845015075,
-        "nmae_unconstrained": 6.316976938318049,
-        "flops": 209,
+        "nmae": 6.641030220826779,
+        "nmae_unconstrained": 6.248628176067393,
+        "flops": 217,
         "certificate": {
           "max_spectral_radius": 0.9983892428717536,
           "all_locally_stable": true,
@@ -613,9 +613,9 @@
       },
       {
         "k": 64,
-        "nmae": 6.271136495758732,
-        "nmae_unconstrained": 6.095915562865394,
-        "flops": 281,
+        "nmae": 6.178197661360383,
+        "nmae_unconstrained": 6.019180297287812,
+        "flops": 289,
         "certificate": {
           "max_spectral_radius": 0.9983892428717536,
           "all_locally_stable": true,
@@ -645,9 +645,9 @@
       },
       {
         "k": 96,
-        "nmae": 6.069575816905311,
-        "nmae_unconstrained": 5.773055335897438,
-        "flops": 431,
+        "nmae": 5.968594987902396,
+        "nmae_unconstrained": 5.691196290069012,
+        "flops": 439,
         "certificate": {
           "max_spectral_radius": 0.9983892429216544,
           "all_locally_stable": true,
@@ -677,9 +677,9 @@
       },
       {
         "k": 144,
-        "nmae": 5.597190827907641,
-        "nmae_unconstrained": 5.64354325041138,
-        "flops": 673,
+        "nmae": 5.511646302996938,
+        "nmae_unconstrained": 5.561283399745417,
+        "flops": 681,
         "certificate": {
           "max_spectral_radius": 0.9983892428943993,
           "all_locally_stable": true,
@@ -712,9 +712,9 @@
     "kan_support_size": 145,
     "deployed": {
       "k": 4,
-      "nmae": 6.4125581269015415,
-      "nmae_unconstrained": 8.568187693507804,
-      "flops": 30,
+      "nmae": 6.396071871058754,
+      "nmae_unconstrained": 8.524619651167342,
+      "flops": 38,
       "certificate": {
         "max_spectral_radius": 0.9983892429200321,
         "all_locally_stable": true,
@@ -867,9 +867,9 @@
     "kan_support_curve": [
       {
         "k": 4,
-        "nmae": 11.830830643219079,
-        "nmae_unconstrained": 14.141893508886135,
-        "flops": 30,
+        "nmae": 11.828052360636628,
+        "nmae_unconstrained": 14.118118624305344,
+        "flops": 38,
         "certificate": {
           "max_spectral_radius": 0.9987697429700707,
           "all_locally_stable": true,
@@ -899,9 +899,9 @@
       },
       {
         "k": 6,
-        "nmae": 12.190931501880842,
-        "nmae_unconstrained": 14.188782780397707,
-        "flops": 36,
+        "nmae": 12.188544390299448,
+        "nmae_unconstrained": 14.164270547666634,
+        "flops": 44,
         "certificate": {
           "max_spectral_radius": 0.9987697429193126,
           "all_locally_stable": true,
@@ -931,9 +931,9 @@
       },
       {
         "k": 8,
-        "nmae": 11.032849379206729,
-        "nmae_unconstrained": 12.785576088293316,
-        "flops": 44,
+        "nmae": 11.03241820490702,
+        "nmae_unconstrained": 12.75960372843067,
+        "flops": 52,
         "certificate": {
           "max_spectral_radius": 0.99876974298369,
           "all_locally_stable": true,
@@ -963,9 +963,9 @@
       },
       {
         "k": 12,
-        "nmae": 11.037402751625978,
-        "nmae_unconstrained": 11.61067560188497,
-        "flops": 63,
+        "nmae": 11.038960799489237,
+        "nmae_unconstrained": 11.566886003964873,
+        "flops": 71,
         "certificate": {
           "max_spectral_radius": 0.9987697430002864,
           "all_locally_stable": true,
@@ -995,9 +995,9 @@
       },
       {
         "k": 16,
-        "nmae": 10.779978968389214,
-        "nmae_unconstrained": 11.253350640649499,
-        "flops": 79,
+        "nmae": 10.777115613131452,
+        "nmae_unconstrained": 11.181762999858384,
+        "flops": 87,
         "certificate": {
           "max_spectral_radius": 0.9987697429883232,
           "all_locally_stable": true,
@@ -1027,9 +1027,9 @@
       },
       {
         "k": 24,
-        "nmae": 11.32449224995401,
-        "nmae_unconstrained": 10.129860296965099,
-        "flops": 111,
+        "nmae": 11.31157539691147,
+        "nmae_unconstrained": 10.044646129309939,
+        "flops": 119,
         "certificate": {
           "max_spectral_radius": 0.9987697430189441,
           "all_locally_stable": true,
@@ -1059,9 +1059,9 @@
       },
       {
         "k": 32,
-        "nmae": 10.647519330027226,
-        "nmae_unconstrained": 9.23866464941156,
-        "flops": 143,
+        "nmae": 10.633210137269804,
+        "nmae_unconstrained": 9.136912174647604,
+        "flops": 151,
         "certificate": {
           "max_spectral_radius": 0.998769742984967,
           "all_locally_stable": true,
@@ -1091,9 +1091,9 @@
       },
       {
         "k": 48,
-        "nmae": 9.628714712601262,
-        "nmae_unconstrained": 8.0422849817416,
-        "flops": 203,
+        "nmae": 9.603535543947352,
+        "nmae_unconstrained": 7.919265475252619,
+        "flops": 211,
         "certificate": {
           "max_spectral_radius": 0.9987697430143566,
           "all_locally_stable": true,
@@ -1123,9 +1123,9 @@
       },
       {
         "k": 64,
-        "nmae": 9.42815312610351,
-        "nmae_unconstrained": 8.027545620750344,
-        "flops": 266,
+        "nmae": 9.391774497295067,
+        "nmae_unconstrained": 7.918771008478937,
+        "flops": 274,
         "certificate": {
           "max_spectral_radius": 0.9987697429854819,
           "all_locally_stable": true,
@@ -1155,9 +1155,9 @@
       },
       {
         "k": 96,
-        "nmae": 9.161054687794167,
-        "nmae_unconstrained": 8.978236399449253,
-        "flops": 394,
+        "nmae": 9.109805363426503,
+        "nmae_unconstrained": 8.871346678540892,
+        "flops": 402,
         "certificate": {
           "max_spectral_radius": 0.9987697430002864,
           "all_locally_stable": true,
@@ -1187,9 +1187,9 @@
       },
       {
         "k": 144,
-        "nmae": 9.770911242027402,
-        "nmae_unconstrained": 9.11095402240059,
-        "flops": 580,
+        "nmae": 9.690194530015232,
+        "nmae_unconstrained": 9.00335295826797,
+        "flops": 588,
         "certificate": {
           "max_spectral_radius": 0.9987697429981113,
           "all_locally_stable": true,
@@ -1221,9 +1221,9 @@
     "direct_polynomial_curve": [
       {
         "k": 4,
-        "nmae": 11.830830643219079,
-        "nmae_unconstrained": 14.141893508886135,
-        "flops": 30,
+        "nmae": 11.828052360636628,
+        "nmae_unconstrained": 14.118118624305344,
+        "flops": 38,
         "certificate": {
           "max_spectral_radius": 0.9987697429700707,
           "all_locally_stable": true,
@@ -1253,9 +1253,9 @@
       },
       {
         "k": 6,
-        "nmae": 12.190931501880842,
-        "nmae_unconstrained": 14.188782780397707,
-        "flops": 36,
+        "nmae": 12.188544390299448,
+        "nmae_unconstrained": 14.164270547666634,
+        "flops": 44,
         "certificate": {
           "max_spectral_radius": 0.9987697429193126,
           "all_locally_stable": true,
@@ -1285,9 +1285,9 @@
       },
       {
         "k": 8,
-        "nmae": 11.032849379206729,
-        "nmae_unconstrained": 12.785576088293316,
-        "flops": 44,
+        "nmae": 11.03241820490702,
+        "nmae_unconstrained": 12.75960372843067,
+        "flops": 52,
         "certificate": {
           "max_spectral_radius": 0.99876974298369,
           "all_locally_stable": true,
@@ -1317,9 +1317,9 @@
       },
       {
         "k": 12,
-        "nmae": 11.028187835963344,
-        "nmae_unconstrained": 11.360113121839605,
-        "flops": 65,
+        "nmae": 11.029655940263282,
+        "nmae_unconstrained": 11.315144869320276,
+        "flops": 73,
         "certificate": {
           "max_spectral_radius": 0.998769742971895,
           "all_locally_stable": true,
@@ -1349,9 +1349,9 @@
       },
       {
         "k": 16,
-        "nmae": 11.043507207602332,
-        "nmae_unconstrained": 11.205095202941044,
-        "flops": 78,
+        "nmae": 11.035298745018666,
+        "nmae_unconstrained": 11.134085539548986,
+        "flops": 86,
         "certificate": {
           "max_spectral_radius": 0.9987697429543682,
           "all_locally_stable": true,
@@ -1381,9 +1381,9 @@
       },
       {
         "k": 24,
-        "nmae": 10.86499813465438,
-        "nmae_unconstrained": 9.665469322803283,
-        "flops": 113,
+        "nmae": 10.86507884878249,
+        "nmae_unconstrained": 9.57692378253295,
+        "flops": 121,
         "certificate": {
           "max_spectral_radius": 0.9987697430900925,
           "all_locally_stable": true,
@@ -1413,9 +1413,9 @@
       },
       {
         "k": 32,
-        "nmae": 9.280157695392104,
-        "nmae_unconstrained": 8.243259561714105,
-        "flops": 145,
+        "nmae": 9.277448431041783,
+        "nmae_unconstrained": 8.120186166551802,
+        "flops": 153,
         "certificate": {
           "max_spectral_radius": 0.9987697430143566,
           "all_locally_stable": true,
@@ -1445,9 +1445,9 @@
       },
       {
         "k": 48,
-        "nmae": 8.811298985856977,
-        "nmae_unconstrained": 8.345344895174382,
-        "flops": 210,
+        "nmae": 8.792702450707354,
+        "nmae_unconstrained": 8.225191041453938,
+        "flops": 218,
         "certificate": {
           "max_spectral_radius": 0.9987697430247111,
           "all_locally_stable": true,
@@ -1477,9 +1477,9 @@
       },
       {
         "k": 64,
-        "nmae": 8.667947972262304,
-        "nmae_unconstrained": 8.044746981627059,
-        "flops": 281,
+        "nmae": 8.630163605702565,
+        "nmae_unconstrained": 7.935808950852462,
+        "flops": 289,
         "certificate": {
           "max_spectral_radius": 0.9987697430002864,
           "all_locally_stable": true,
@@ -1509,9 +1509,9 @@
       },
       {
         "k": 96,
-        "nmae": 8.390969074214302,
-        "nmae_unconstrained": 8.196692203698447,
-        "flops": 424,
+        "nmae": 8.32820194797056,
+        "nmae_unconstrained": 8.074993482306356,
+        "flops": 432,
         "certificate": {
           "max_spectral_radius": 0.9987697430143011,
           "all_locally_stable": true,
@@ -1541,9 +1541,9 @@
       },
       {
         "k": 144,
-        "nmae": 9.002617644985405,
-        "nmae_unconstrained": 8.402501112164398,
-        "flops": 665,
+        "nmae": 8.908820481884336,
+        "nmae_unconstrained": 8.289954508625785,
+        "flops": 673,
         "certificate": {
           "max_spectral_radius": 0.9987697429707392,
           "all_locally_stable": true,
@@ -1576,9 +1576,9 @@
     "kan_support_size": 145,
     "deployed": {
       "k": 48,
-      "nmae": 9.628714712601262,
-      "nmae_unconstrained": 8.0422849817416,
-      "flops": 203,
+      "nmae": 9.603535543947352,
+      "nmae_unconstrained": 7.919265475252619,
+      "flops": 211,
       "certificate": {
         "max_spectral_radius": 0.9987697430143566,
         "all_locally_stable": true,

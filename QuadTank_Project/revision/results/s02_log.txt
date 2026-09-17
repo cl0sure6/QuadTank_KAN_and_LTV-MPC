@@ -1,32 +1,32 @@
 ================ regime MP ================
   n_train=14100 n_val=2900 n_test=3400
-[MP] spline-KAN  test nMAE=2.43%  R2=0.9862
-[MP] symbolic RAW test nMAE=7.78%  R2=0.8759
-[MP] symbolic REFIT      test nMAE=5.51%  R2=0.9354
-[MP] symbolic REFIT+SC   test nMAE=5.86%  R2=0.9266  (sign violations 0.088/0.104 -> 0.000/0.000)
-  MLP(32, 32): best val MSE 1.170e-03  (10 s)
-[MP] mlp: nMAE=3.19% R2=0.9786
-  MLP(8,): best val MSE 1.482e-02  (7 s)
-[MP] mlp_small: nMAE=8.44% R2=0.8495
-  DeepONet: best val MSE 4.746e-03  (24 s)
-[MP] deeponet: nMAE=4.11% R2=0.9647
-[MP] poly2 (45 terms): nMAE=7.27% R2=0.8702
-[MP] poly3 (165 terms): nMAE=5.71% R2=0.9219
-[MP] poly4 (495 terms): nMAE=5.27% R2=0.9348
-  sparse-poly OMP (deg<=4, [145, 145] terms): nMAE=5.29% R2=0.9366
+[MP] spline-KAN  test nMAE=2.39%  R2=0.9864
+[MP] symbolic RAW test nMAE=7.75%  R2=0.8764
+[MP] symbolic REFIT      test nMAE=5.44%  R2=0.9364
+[MP] symbolic REFIT+SC   test nMAE=5.77%  R2=0.9284  (sign violations 0.088/0.104 -> 0.000/0.000)
+  MLP(32, 32): best val MSE 1.170e-03  (8 s)
+[MP] mlp: nMAE=3.17% R2=0.9785
+  MLP(8,): best val MSE 1.482e-02  (6 s)
+[MP] mlp_small: nMAE=8.41% R2=0.8501
+  DeepONet: best val MSE 4.746e-03  (21 s)
+[MP] deeponet: nMAE=4.09% R2=0.9647
+[MP] poly2 (45 terms): nMAE=7.24% R2=0.8708
+[MP] poly3 (165 terms): nMAE=5.63% R2=0.9230
+[MP] poly4 (495 terms): nMAE=5.18% R2=0.9362
+  sparse-poly OMP (deg<=4, [145, 145] terms): nMAE=5.21% R2=0.9379
 ================ regime NMP ================
   n_train=14200 n_val=2900 n_test=3300
-[NMP] spline-KAN  test nMAE=4.37%  R2=0.9593
-[NMP] symbolic RAW test nMAE=11.24%  R2=0.7735
-[NMP] symbolic REFIT      test nMAE=9.11%  R2=0.8621
-[NMP] symbolic REFIT+SC   test nMAE=9.77%  R2=0.8501  (sign violations 0.029/0.032 -> 0.006/0.006)
-  MLP(32, 32): best val MSE 3.816e-03  (9 s)
-[NMP] mlp: nMAE=4.15% R2=0.9577
-  MLP(8,): best val MSE 1.990e-02  (7 s)
-[NMP] mlp_small: nMAE=11.20% R2=0.7804
-  DeepONet: best val MSE 1.194e-02  (23 s)
-[NMP] deeponet: nMAE=6.82% R2=0.9219
-[NMP] poly2 (45 terms): nMAE=9.91% R2=0.8046
-[NMP] poly3 (165 terms): nMAE=7.53% R2=0.8800
-[NMP] poly4 (495 terms): nMAE=8.92% R2=0.8673
-  sparse-poly OMP (deg<=4, [145, 145] terms): nMAE=8.30% R2=0.8782
+[NMP] spline-KAN  test nMAE=4.60%  R2=0.9574
+[NMP] symbolic RAW test nMAE=11.23%  R2=0.7753
+[NMP] symbolic REFIT      test nMAE=9.00%  R2=0.8684
+[NMP] symbolic REFIT+SC   test nMAE=9.68%  R2=0.8527  (sign violations 0.029/0.032 -> 0.006/0.006)
+  MLP(32, 32): best val MSE 3.816e-03  (8 s)
+[NMP] mlp: nMAE=4.15% R2=0.9570
+  MLP(8,): best val MSE 1.990e-02  (6 s)
+[NMP] mlp_small: nMAE=11.18% R2=0.7804
+  DeepONet: best val MSE 1.194e-02  (20 s)
+[NMP] deeponet: nMAE=6.80% R2=0.9215
+[NMP] poly2 (45 terms): nMAE=9.89% R2=0.8049
+[NMP] poly3 (165 terms): nMAE=7.43% R2=0.8857
+[NMP] poly4 (495 terms): nMAE=8.79% R2=0.8751
+  sparse-poly OMP (deg<=4, [145, 145] terms): nMAE=8.18% R2=0.8855

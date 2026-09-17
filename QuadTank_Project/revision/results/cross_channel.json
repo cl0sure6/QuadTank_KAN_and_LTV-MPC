@@ -106,7 +106,7 @@
   "NMP": {
     "deployed_law": {
       "du1_de1": {
-        "min": 0.6416,
+        "min": 0.6643,
         "median": 1.0667,
         "max": 1.587,
         "frac_nonneg": 1.0,
@@ -115,7 +115,7 @@
       "du1_de2": {
         "min": 0.0288,
         "median": 0.8635,
-        "max": 1.2603,
+        "max": 1.2142,
         "frac_nonneg": 1.0,
         "n": 300
       },

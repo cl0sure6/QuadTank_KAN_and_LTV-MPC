@@ -17,13 +17,17 @@ Policy parameterisation shared by every learned surrogate.
 
 The deployed controller is
 
-    u = sat[ u_eq(r)  +  K e  +  w(e) * U_max * f(phi(x, r)) ],
-        \_______/     \___/     \_________________________/
-        feed-forward  LQR core   learned nonlinear correction
+    u = sat[ u_eq(r)  +  K e  +  g(x) w(e) * U_max * f(phi(x, r)) ],
+        \_______/     \___/     \___________________________________/
+        feed-forward  LQR core        learned nonlinear correction
 
-with  e = r - x,  phi = [x/X_n, e/X_n],  and the gate
+with  e = r - x,  phi = [x/X_n, e/X_n],  the set-point gate
 
-    w(e) = min( ||e||^2 / s^2 , 1 ).
+    w(e) = min( ||e||^2 / s^2 , 1 )
+
+and the level fade
+
+    g(x) = clip( (H_max - max_i x_i) / (H_max - H_on), 0, 1 ).
 
 Each term has a job and the split is what makes the controller certifiable:
 
@@ -43,6 +47,15 @@ Each term has a job and the split is what makes the controller certifiable:
   the fit has to be constrained into.  The learned term is free to model the
   predictive, constraint-aware behaviour that distinguishes MPC from LQR, which
   is precisely the behaviour that matters away from the set-point.
+
+* g(x) hands authority back to the LQR core as any level approaches the overflow
+  limit.  It is the second structural device in the parameterisation and it is
+  argued for in exactly the same way as the first: because w and its gradient
+  already vanish at the set-point, multiplying the learned term by ANY bounded
+  factor leaves the two properties above untouched, so g buys a safety property
+  without spending any of the guarantees.  It is not a constraint-satisfaction
+  certificate -- there is no invariance argument here -- and the paper does not
+  claim one.
 
 Setting LQR_CORE = False and GATE = False recovers the plain "learn u directly"
 formulation of the original submission; both are reported in the ablation.
@@ -84,8 +97,32 @@ _BOX_CACHE = {}
 # DeepONet) are inherently bounded and need no such guard.
 CLIP_FEATURES = True
 
-# u_eq: 2 sqrt + 4 multiply-add;  K e: 8 multiply-add;  gate: 4 mul + 3 add + 1 div
-CORE_FLOPS = 2 + 4 + 8 + 8
+# Clipping keeps the read-out bounded, but it freezes it: outside the box the
+# polynomial holds its boundary value and stops responding to the state.  On a
+# large fill that is a failure mode of its own -- the LQR core drives its command
+# negative to shut the pump while the frozen correction holds a large positive
+# value and overrides it, and a tank overflows.  The fade below returns authority
+# to the core as any level approaches the overflow limit.
+#
+# It multiplies the learned term only, so it inherits the gate's argument
+# wholesale: w(e) and its gradient already vanish at every reachable set-point,
+# so for ANY bounded g the product g*w*f and its Jacobian vanish there too, and
+# (P1)/(P2) are untouched.  H_FADE_ON is set above every equilibrium level
+# reachable from the training reference box -- 15.0 cm at the box's own top,
+# r = 15 cm -- so g == 1 on the whole region the stability certificate covers.
+# The fade is inert there by construction rather than by tuning.
+#
+# It also cannot create a negative-feedback violation.  The constrained fit
+# guarantees  d u_j / d e_i = X_n K_ji + U_max (G c)_ji >= 0  with X_n K_ji > 0
+# on every constrained channel; the faded law gives X_n K_ji + g * U_max (G c)_ji,
+# which is >= the former when (G c)_ji < 0 and >= X_n K_ji > 0 otherwise.
+LEVEL_FADE = True
+H_FADE_ON = 17.0           # g = 1 below this level, 0 at Q.H_MAX
+
+# u_eq: 2 sqrt + 4 multiply-add;  K e: 8 multiply-add;  gate: 4 mul + 3 add + 1 div;
+# level fade: 3 compare + 1 sub + 1 mul by a precomputed reciprocal + 2 clamp
+# compares + 1 mul to fold it into the gate
+CORE_FLOPS = 2 + 4 + 8 + 8 + 8
 
 
 def lqr_gain(regime):
@@ -136,6 +173,19 @@ def dgate(feat, v):
     return np.where(active, 2.0 * feat[:, v] / GATE_SCALE ** 2, 0.0)
 
 
+def level_fade(x):
+    """g(x): 1 while every level is below H_FADE_ON, 0 at the overflow limit.
+
+    Depends on the levels only, never on the tracking error, which is what makes
+    it neutral for the shape constraint: d/de_i of the learned term is simply
+    scaled by g >= 0, so no sign can be flipped.
+    """
+    x = np.asarray(x, float).reshape(-1, 4)
+    if not LEVEL_FADE:
+        return np.ones(len(x))
+    return np.clip((Q.H_MAX - x.max(1)) / (Q.H_MAX - H_FADE_ON), 0.0, 1.0)
+
+
 def _core(ref, x, regime):
     """u_eq(r) + K e, in volts."""
     ref = np.asarray(ref, float).reshape(-1, 4)
@@ -164,8 +214,14 @@ def gate_of(x, ref):
 
 
 def decode(y, x, ref, regime, clip=True):
-    """Map a surrogate output back to a pump command."""
+    """Map a surrogate output back to a pump command.
+
+    The fade is applied here, in the shared skeleton, rather than inside the
+    symbolic law: every surrogate in the comparison is deployed through the same
+    parameterisation and only f differs, so a safety device that belonged to one
+    of them would make the comparison meaningless.
+    """
     y = np.asarray(y, float).reshape(-1, 2)
-    w = gate(Q.features(x, ref)).reshape(-1, 1)
+    w = (gate(Q.features(x, ref)) * level_fade(x)).reshape(-1, 1)
     u = _core(ref, x, regime) + w * y * Q.NORM_U
     return np.clip(u, Q.U_MIN, Q.U_MAX) if clip else u

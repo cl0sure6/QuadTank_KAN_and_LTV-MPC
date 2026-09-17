@@ -367,6 +367,12 @@ def total_shape_rows(F, support, j, regime, i=None):
 
     `i` defaults to `j`, giving the own-channel constraint. Passing i != j gives
     the cross-channel constraint, which is affine in exactly the same way.
+
+    The level fade g(x) of policyform is deliberately NOT included. It depends on
+    the levels only, so it scales this derivative by g in [0, 1] without touching
+    its structure, and because the offset X_n K_ji is strictly positive on every
+    channel constrained here, g0 + g (G c) >= min(g0, g0 + G c): imposing the
+    constraint at g = 1 is the conservative case and implies it for all g.
     """
     import policyform as PF
     import qtlib as Q

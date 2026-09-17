@@ -91,13 +91,26 @@ def restore(tmp):
 
 
 def run_stage(script, seed):
-    env = dict(os.environ, KAN_SEED=str(seed))
+    """Run one stage in a child process with the training seed overridden.
+
+    Both ends of the pipe are pinned to UTF-8. Without this the child inherits
+    the console's code page (cp1252 on a Western-locale Windows) while pykan's
+    progress output contains bytes that page cannot represent, which kills the
+    reader thread inside subprocess with a UnicodeDecodeError. The stage itself
+    survives -- the return code is unaffected -- so the campaign completes and
+    the damage is confined to the captured log, but a crash inside the harness
+    that reports failures is not something to leave in place.
+    """
+    env = dict(os.environ, KAN_SEED=str(seed), PYTHONIOENCODING="utf-8")
     r = subprocess.run([sys.executable, script], cwd=HERE, env=env,
-                       capture_output=True, text=True)
+                       capture_output=True, text=True,
+                       encoding="utf-8", errors="replace")
     if r.returncode != 0:
         print(f"    !! {script} failed (rc={r.returncode})", flush=True)
-        print("   ", r.stdout[-800:], flush=True)
-        print("   ", r.stderr[-800:], flush=True)
+        # capture can still come back empty if the child died before writing;
+        # this is the failure path, so it must not raise on its way out
+        print("   ", (r.stdout or "")[-800:], flush=True)
+        print("   ", (r.stderr or "")[-800:], flush=True)
     return r.returncode == 0
 
 

@@ -56,12 +56,18 @@ DT = 0.1
 
 
 # ----------------------------------------------------------------- the law
-def _learned(phi, law, regime):
-    """w(phi) * U_max * m(clip(phi))^T c, in volts."""
+def _learned(phi, law, regime, x):
+    """g(x) * w(phi) * U_max * m(clip(phi))^T c, in volts.
+
+    The level fade is included because this stage reports the derivatives of the
+    law as deployed, and the sampling here does reach levels where g < 1. It
+    scales the own- and cross-channel derivatives by the same factor, so it
+    cannot change which of them is sign-definite -- only the magnitudes.
+    """
     phi = np.asarray(phi, float).reshape(1, 8)
     fc = PF.clip_features(phi, regime)
     y = np.array([SY.design(fc, law.sup[j]) @ law.coef[j] for j in range(2)]).ravel()
-    return PF.gate(phi)[0] * y * Q.NORM_U
+    return PF.level_fade(x)[0] * PF.gate(phi)[0] * y * Q.NORM_U
 
 
 def law_du_de(x, ref, law, regime):
@@ -73,7 +79,7 @@ def law_du_de(x, ref, law, regime):
         for sgn in (+1, -1):
             r = np.array(ref, float)
             r[i] += sgn * H_LAW * Q.NORM_X
-            out.append(_learned(Q.features(x, r), law, regime))
+            out.append(_learned(Q.features(x, r), law, regime, x))
         # feed-forward u_eq(r) is excluded: it is a function of the commanded
         # reference, not of the tracking error, and the constraint of the
         # read-out is stated on the error channel only.

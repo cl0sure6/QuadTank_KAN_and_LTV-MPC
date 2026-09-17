@@ -170,6 +170,21 @@ def train_kan(regime, ds, log):
     log(f"[{regime}] symbolic RAW test nMAE={m_sym_raw['nmae_pct_of_range']:.2f}%  R2={m_sym_raw['r2']:.4f}")
 
     formulas = model.symbolic_formula()[0]
+
+    # Persist the network's raw outputs on the test split, together with the
+    # exact features they were produced from. The KAN itself is not serialisable
+    # here in a form later stages can reload, and training is not reproducible
+    # even at a fixed seed, so without this the two KAN rows of Table 4 cannot be
+    # re-evaluated when the policy skeleton changes -- they would have to be
+    # retrained, which changes them for unrelated reasons. `s02c_reevaluate.py`
+    # consumes this file and verifies it against the recorded metrics before use.
+    np.savez(os.path.join(MODELS, f"kan_testpred_{regime}.npz"),
+             feat_test=np.asarray(te[0], float),
+             pred_spline=np.asarray(pred_spline, float),
+             pred_sym_raw=np.asarray(pred_sym_raw, float),
+             nmae_spline=m_spline["nmae_pct_of_range"],
+             nmae_sym_raw=m_sym_raw["nmae_pct_of_range"])
+
     return dict(model=model, pred_spline=pred_spline, m_spline=m_spline,
                 m_sym_raw=m_sym_raw, edge_r2=edge_r2, formulas=formulas,
                 train_time=train_time)

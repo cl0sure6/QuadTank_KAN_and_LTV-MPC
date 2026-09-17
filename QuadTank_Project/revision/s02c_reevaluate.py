@@ -20,16 +20,16 @@ it depends on policyform.decode as well as on the trained model. When the
 skeleton changes -- as it did when the level fade was added -- those numbers go
 stale even though no model changed.
 
-Retraining is the wrong way to refresh them. KAN training on this toolchain is
-not bit-reproducible even at a fixed seed (a second run at seed 42 moves the
-spline error by up to 0.27 percentage points, Section 5.2), so re-running stage 2
-would move every baseline for reasons unrelated to the skeleton and would leave
-the seed campaign of stage 9 describing networks that no longer exist on disk.
+Retraining is a poor way to refresh them. It costs ~20 minutes, it couples a
+presentational change to the training stage, and it is only safe while training
+stays reproducible -- which holds here when stage 2 runs on an otherwise idle
+machine, but was not observed to hold when it was run alongside other compute.
+Re-evaluating the stored outputs avoids the question entirely.
 
 This stage instead reloads the stored artefacts and recomputes only what the
 decoding affects:
 
-    kan_spline, symbolic_raw                 models/kan_pred_{regime}.npz
+    kan_spline, symbolic_raw                 models/kan_testpred_{regime}.npz
     symbolic_refit, ..._shape_constrained    models/symbolic_law_full_{regime}.npz
     mlp, mlp_small, deeponet                 models/*.pt
     poly2, poly3, poly4                      models/poly{d}_{regime}.npz
@@ -39,9 +39,11 @@ fits, the extracted structure, parameter counts, training times -- are carried
 over from the existing file unchanged, because they are properties of the
 training run and this stage does not train.
 
-Every recomputed value is checked against the stored one with the fade disabled
-before anything is written: if the reconstruction cannot reproduce the previous
-number exactly, the stage refuses to overwrite.
+The stage is idempotent and states which case it is in. A row already matching
+the current skeleton is reported as such and left alone; a row matching the
+skeleton with the fade toggled is updated; a row matching NEITHER means the
+models on disk are not the ones that produced the file, and the stage refuses to
+write anything rather than guess.
 
 Outputs results/openloop_metrics.json (in place).
 """

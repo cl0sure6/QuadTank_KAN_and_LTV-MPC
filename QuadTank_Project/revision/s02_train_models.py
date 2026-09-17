@@ -173,11 +173,10 @@ def train_kan(regime, ds, log):
 
     # Persist the network's raw outputs on the test split, together with the
     # exact features they were produced from. The KAN itself is not serialisable
-    # here in a form later stages can reload, and training is not reproducible
-    # even at a fixed seed, so without this the two KAN rows of Table 4 cannot be
-    # re-evaluated when the policy skeleton changes -- they would have to be
-    # retrained, which changes them for unrelated reasons. `s02c_reevaluate.py`
-    # consumes this file and verifies it against the recorded metrics before use.
+    # here in a form later stages can reload, so without this the two KAN rows of
+    # Table 4 cannot be re-evaluated when the policy skeleton changes without
+    # retraining the network. `s02c_reevaluate.py` consumes this file, and checks
+    # the stored features against the current split before trusting it.
     np.savez(os.path.join(MODELS, f"kan_testpred_{regime}.npz"),
              feat_test=np.asarray(te[0], float),
              pred_spline=np.asarray(pred_spline, float),

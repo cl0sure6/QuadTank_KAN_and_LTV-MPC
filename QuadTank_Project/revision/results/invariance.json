@@ -22,7 +22,7 @@
         "max_abs_u_minus_ueq_V": 4.440892098500626e-16
       },
       "deployed law": {
-        "max_spectral_radius": 0.9983892429197035,
+        "max_spectral_radius": 0.9983892429200321,
         "all_locally_stable": true,
         "max_abs_u_minus_ueq_V": 4.440892098500626e-16
       }
@@ -68,12 +68,12 @@
         "max_abs_u_minus_ueq_V": 6.661338147750939e-16
       },
       "deployed law": {
-        "max_spectral_radius": 0.9987697429598065,
+        "max_spectral_radius": 0.9987697430143566,
         "all_locally_stable": true,
         "max_abs_u_minus_ueq_V": 6.661338147750939e-16
       }
     },
-    "spectral_radius_spread": 1.1132028632232505e-10,
+    "spectral_radius_spread": 8.442424537236093e-11,
     "P1_holds": true,
     "P2_holds": true,
     "lqr_gain": [

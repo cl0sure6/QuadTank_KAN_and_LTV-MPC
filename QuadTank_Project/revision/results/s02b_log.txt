@@ -1,54 +1,54 @@
 === MP ===
   KAN support re-derived from formulas: 145 monomials
   KAN-selected support:
-    [KAN] k=   4  nMAE=  6.16% (unconstr   8.57%)  flops=   30  viol [0.014, 0.028] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
-    [KAN] k=   6  nMAE=  7.38% (unconstr   8.53%)  flops=   42  viol [0.016, 0.263] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
-    [KAN] k=   8  nMAE=  7.00% (unconstr   7.86%)  flops=   49  viol [0.231, 0.292] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
-    [KAN] k=  12  nMAE=  7.23% (unconstr   7.37%)  flops=   64  viol [0.282, 0.301] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
-    [KAN] k=  16  nMAE=  6.67% (unconstr   7.01%)  flops=   79  viol [0.286, 0.297] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
-    [KAN] k=  24  nMAE=  7.04% (unconstr   6.83%)  flops=  109  viol [0.297, 0.288] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
-    [KAN] k=  32  nMAE=  7.10% (unconstr   6.64%)  flops=  141  viol [0.292, 0.302] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
-    [KAN] k=  48  nMAE=  6.28% (unconstr   6.19%)  flops=  205  viol [0.202, 0.188] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
-    [KAN] k=  64  nMAE=  6.13% (unconstr   6.11%)  flops=  268  viol [0.168, 0.189] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
-    [KAN] k=  96  nMAE=  5.88% (unconstr   5.89%)  flops=  392  viol [0.125, 0.142] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
-    [KAN] k= 144  nMAE=  5.73% (unconstr   5.51%)  flops=  580  viol [0.126, 0.131] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
+    [KAN] k=   4  nMAE=  6.41% (unconstr   8.57%)  flops=   30  viol [0.072, 0.079] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
+    [KAN] k=   6  nMAE=  7.43% (unconstr   8.53%)  flops=   42  viol [0.074, 0.086] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
+    [KAN] k=   8  nMAE=  6.83% (unconstr   7.86%)  flops=   49  viol [0.073, 0.089] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
+    [KAN] k=  12  nMAE=  6.71% (unconstr   7.37%)  flops=   64  viol [0.09, 0.096] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
+    [KAN] k=  16  nMAE=  6.37% (unconstr   7.01%)  flops=   79  viol [0.097, 0.095] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
+    [KAN] k=  24  nMAE=  7.00% (unconstr   6.83%)  flops=  109  viol [0.109, 0.099] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
+    [KAN] k=  32  nMAE=  7.13% (unconstr   6.64%)  flops=  141  viol [0.105, 0.111] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
+    [KAN] k=  48  nMAE=  6.52% (unconstr   6.19%)  flops=  205  viol [0.102, 0.114] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
+    [KAN] k=  64  nMAE=  6.33% (unconstr   6.11%)  flops=  268  viol [0.099, 0.114] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
+    [KAN] k=  96  nMAE=  5.94% (unconstr   5.89%)  flops=  392  viol [0.089, 0.111] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
+    [KAN] k= 144  nMAE=  5.86% (unconstr   5.51%)  flops=  580  viol [0.088, 0.104] -> [0.006, 0.0]  rho=0.99839 off=0.0000cm stable=True
   full degree-4 dictionary (direct sparse polynomial regression):
-    [POLY] k=   4  nMAE=  6.16% (unconstr   8.57%)  flops=   30  viol [0.014, 0.028] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
-    [POLY] k=   6  nMAE=  7.38% (unconstr   8.53%)  flops=   42  viol [0.016, 0.263] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
-    [POLY] k=   8  nMAE=  7.00% (unconstr   7.86%)  flops=   49  viol [0.231, 0.292] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
-    [POLY] k=  12  nMAE=  7.23% (unconstr   7.37%)  flops=   64  viol [0.282, 0.301] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
-    [POLY] k=  16  nMAE=  6.70% (unconstr   7.00%)  flops=   79  viol [0.286, 0.297] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
-    [POLY] k=  24  nMAE=  7.16% (unconstr   6.79%)  flops=  111  viol [0.286, 0.286] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
-    [POLY] k=  32  nMAE=  7.03% (unconstr   6.66%)  flops=  144  viol [0.292, 0.307] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
-    [POLY] k=  48  nMAE=  6.59% (unconstr   6.32%)  flops=  209  viol [0.288, 0.296] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
-    [POLY] k=  64  nMAE=  5.99% (unconstr   6.10%)  flops=  281  viol [0.293, 0.306] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
-    [POLY] k=  96  nMAE=  5.98% (unconstr   5.77%)  flops=  431  viol [0.283, 0.212] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
-    [POLY] k= 144  nMAE=  5.83% (unconstr   5.64%)  flops=  673  viol [0.142, 0.258] -> [0.008, 0.013]  rho=0.99839 off=0.0000cm stable=True
-  deployed: k=4 nMAE=6.16% flops=30 (smallest certified-stable budget within 1.0 pp of the best certified accuracy)
+    [POLY] k=   4  nMAE=  6.41% (unconstr   8.57%)  flops=   30  viol [0.072, 0.079] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
+    [POLY] k=   6  nMAE=  7.43% (unconstr   8.53%)  flops=   42  viol [0.074, 0.086] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
+    [POLY] k=   8  nMAE=  6.83% (unconstr   7.86%)  flops=   49  viol [0.073, 0.089] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
+    [POLY] k=  12  nMAE=  6.71% (unconstr   7.37%)  flops=   64  viol [0.09, 0.096] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
+    [POLY] k=  16  nMAE=  6.41% (unconstr   7.00%)  flops=   79  viol [0.097, 0.094] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
+    [POLY] k=  24  nMAE=  6.87% (unconstr   6.79%)  flops=  111  viol [0.091, 0.098] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
+    [POLY] k=  32  nMAE=  6.87% (unconstr   6.66%)  flops=  144  viol [0.102, 0.11] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
+    [POLY] k=  48  nMAE=  6.70% (unconstr   6.32%)  flops=  209  viol [0.106, 0.113] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
+    [POLY] k=  64  nMAE=  6.27% (unconstr   6.10%)  flops=  281  viol [0.106, 0.114] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
+    [POLY] k=  96  nMAE=  6.07% (unconstr   5.77%)  flops=  431  viol [0.111, 0.11] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
+    [POLY] k= 144  nMAE=  5.60% (unconstr   5.64%)  flops=  673  viol [0.099, 0.112] -> [0.0, 0.0]  rho=0.99839 off=0.0000cm stable=True
+  deployed: k=4 nMAE=6.41% flops=30 (smallest certified-stable budget within 1.0 pp of the best certified accuracy)
 === NMP ===
   KAN support re-derived from formulas: 145 monomials
   KAN-selected support:
-    [KAN] k=   4  nMAE= 14.14% (unconstr  14.14%)  flops=   30  viol [0.0, 0.0] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
-    [KAN] k=   6  nMAE= 14.19% (unconstr  14.19%)  flops=   36  viol [0.0, 0.0] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
-    [KAN] k=   8  nMAE= 12.78% (unconstr  12.79%)  flops=   44  viol [0.0, 0.019] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
-    [KAN] k=  12  nMAE= 11.46% (unconstr  11.61%)  flops=   63  viol [0.014, 0.021] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
-    [KAN] k=  16  nMAE= 11.18% (unconstr  11.25%)  flops=   79  viol [0.037, 0.0] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
-    [KAN] k=  24  nMAE= 10.44% (unconstr  10.13%)  flops=  111  viol [0.145, 0.224] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
-    [KAN] k=  32  nMAE= 10.00% (unconstr   9.24%)  flops=  143  viol [0.254, 0.159] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
-    [KAN] k=  48  nMAE=  8.58% (unconstr   8.04%)  flops=  203  viol [0.242, 0.198] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
-    [KAN] k=  64  nMAE=  8.45% (unconstr   8.03%)  flops=  266  viol [0.24, 0.199] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
-    [KAN] k=  96  nMAE=  8.84% (unconstr   8.98%)  flops=  394  viol [0.301, 0.154] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
-    [KAN] k= 144  nMAE=  8.77% (unconstr   9.11%)  flops=  580  viol [0.26, 0.225] -> [0.003, 0.004]  rho=0.99877 off=0.0000cm stable=True
+    [KAN] k=   4  nMAE= 11.83% (unconstr  14.14%)  flops=   30  viol [0.009, 0.006] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
+    [KAN] k=   6  nMAE= 12.19% (unconstr  14.19%)  flops=   36  viol [0.017, 0.0] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
+    [KAN] k=   8  nMAE= 11.03% (unconstr  12.79%)  flops=   44  viol [0.019, 0.011] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
+    [KAN] k=  12  nMAE= 11.04% (unconstr  11.61%)  flops=   63  viol [0.007, 0.003] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
+    [KAN] k=  16  nMAE= 10.78% (unconstr  11.25%)  flops=   79  viol [0.008, 0.003] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
+    [KAN] k=  24  nMAE= 11.32% (unconstr  10.13%)  flops=  111  viol [0.014, 0.039] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
+    [KAN] k=  32  nMAE= 10.65% (unconstr   9.24%)  flops=  143  viol [0.018, 0.023] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
+    [KAN] k=  48  nMAE=  9.63% (unconstr   8.04%)  flops=  203  viol [0.026, 0.023] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
+    [KAN] k=  64  nMAE=  9.43% (unconstr   8.03%)  flops=  266  viol [0.029, 0.02] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
+    [KAN] k=  96  nMAE=  9.16% (unconstr   8.98%)  flops=  394  viol [0.033, 0.043] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
+    [KAN] k= 144  nMAE=  9.77% (unconstr   9.11%)  flops=  580  viol [0.029, 0.032] -> [0.006, 0.005]  rho=0.99877 off=0.0000cm stable=True
   full degree-4 dictionary (direct sparse polynomial regression):
-    [POLY] k=   4  nMAE= 14.14% (unconstr  14.14%)  flops=   30  viol [0.0, 0.0] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
-    [POLY] k=   6  nMAE= 14.19% (unconstr  14.19%)  flops=   36  viol [0.0, 0.0] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
-    [POLY] k=   8  nMAE= 12.78% (unconstr  12.79%)  flops=   44  viol [0.0, 0.019] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
-    [POLY] k=  12  nMAE= 11.28% (unconstr  11.36%)  flops=   65  viol [0.0, 0.021] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
-    [POLY] k=  16  nMAE= 11.16% (unconstr  11.21%)  flops=   78  viol [0.022, 0.0] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
-    [POLY] k=  24  nMAE=  9.65% (unconstr   9.67%)  flops=  113  viol [0.121, 0.058] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
-    [POLY] k=  32  nMAE=  8.70% (unconstr   8.24%)  flops=  145  viol [0.21, 0.1] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
-    [POLY] k=  48  nMAE=  8.66% (unconstr   8.35%)  flops=  210  viol [0.212, 0.186] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
-    [POLY] k=  64  nMAE=  8.45% (unconstr   8.04%)  flops=  281  viol [0.235, 0.151] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
-    [POLY] k=  96  nMAE=  7.99% (unconstr   8.20%)  flops=  424  viol [0.229, 0.223] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
-    [POLY] k= 144  nMAE=  8.54% (unconstr   8.40%)  flops=  665  viol [0.278, 0.219] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
-  deployed: k=48 nMAE=8.58% flops=203 (smallest certified-stable budget within 1.0 pp of the best certified accuracy)
+    [POLY] k=   4  nMAE= 11.83% (unconstr  14.14%)  flops=   30  viol [0.009, 0.006] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
+    [POLY] k=   6  nMAE= 12.19% (unconstr  14.19%)  flops=   36  viol [0.017, 0.0] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
+    [POLY] k=   8  nMAE= 11.03% (unconstr  12.79%)  flops=   44  viol [0.019, 0.011] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
+    [POLY] k=  12  nMAE= 11.03% (unconstr  11.36%)  flops=   65  viol [0.009, 0.003] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
+    [POLY] k=  16  nMAE= 11.04% (unconstr  11.21%)  flops=   78  viol [0.006, 0.003] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
+    [POLY] k=  24  nMAE= 10.86% (unconstr   9.67%)  flops=  113  viol [0.009, 0.011] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
+    [POLY] k=  32  nMAE=  9.28% (unconstr   8.24%)  flops=  145  viol [0.031, 0.019] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
+    [POLY] k=  48  nMAE=  8.81% (unconstr   8.35%)  flops=  210  viol [0.026, 0.025] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
+    [POLY] k=  64  nMAE=  8.67% (unconstr   8.04%)  flops=  281  viol [0.024, 0.025] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
+    [POLY] k=  96  nMAE=  8.39% (unconstr   8.20%)  flops=  424  viol [0.024, 0.034] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
+    [POLY] k= 144  nMAE=  9.00% (unconstr   8.40%)  flops=  665  viol [0.026, 0.047] -> [0.0, 0.0]  rho=0.99877 off=0.0000cm stable=True
+  deployed: k=48 nMAE=9.63% flops=203 (smallest certified-stable budget within 1.0 pp of the best certified accuracy)

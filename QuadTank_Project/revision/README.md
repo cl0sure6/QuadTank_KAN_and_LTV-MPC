@@ -17,6 +17,9 @@ python s05_scenarios.py            # ~12 min  closed-loop scenario campaign
 python s06_make_figures.py         # ~1 min   all figures
 python s07_make_tables.py          # <1 min   all LaTeX tables
 python s08_key_numbers.py          # <1 min   every number quoted in the prose
+python s04c_cross_channel.py       # ~3 min   own- vs cross-channel derivatives, law vs teacher
+python s09_seed_campaign.py        # ~2.5 h   how much the result depends on the training seed
+python s10_constraint_robustness.py# ~20 min  active state constraint + widened robustness
 ```
 
 `results/key_numbers.json` is the one file to look at if you want to check the
@@ -83,6 +86,19 @@ the trained read-out: the spectral radius moves by less than 1e-10.
   re-estimated by the convex program in `symbolic.fit_shape_constrained`, which imposes
   `∂u_j/∂e_j ≥ 0` as affine inequalities — this replaces the manual sign correction of
   the earlier work with a procedure that has a unique solution and no expert input.
+  The seed campaign (`s09`) shows why the support is the durable part: the network's
+  own error spans 4 pp across seeds while the deployed law is identical on all of them.
+
+* **Cross-channel constraints are imposed in NMP only.** `∂u_j/∂e_i` for `i ≠ j` is
+  affine in the coefficients in exactly the same way, so adding it costs nothing
+  structurally. Whether it *should* be added is a question about the plant, settled by
+  `s04c`: the teacher's cross gains change sign in MP and are two orders of magnitude
+  below its diagonal there, but are large and strictly positive in NMP.
+
+* **Constraints are sampled at realizable operating points.** `φ` carries levels and
+  errors together, so drawing them independently from the observed feature box implies
+  references outside the tank — 33.9 % of points did. `symbolic.constraint_points` now
+  generates `(x, r)` pairs with `r` an exact equilibrium.
 
 * **The deployed term budget is chosen by the stability certificate**, not by accuracy
   alone: `s02b` takes the smallest budget certified locally exponentially stable at all
@@ -101,19 +117,19 @@ the trained read-out: the spectral radius moves by less than 1e-10.
 
 | | MP | NMP |
 |---|---|---|
-| spline KAN → MPC policy | 2.43 % | 4.45 % |
-| after `auto_symbolic` | 7.85 % | 10.97 % |
+| spline KAN → MPC policy | 2.43 % | 4.37 % |
+| after `auto_symbolic` | 7.78 % | 11.24 % |
 | after convex refit | 5.51 % | 9.11 % |
-| deployed law | 6.16 % (4 terms, 30 MACs) | 8.58 % (48 terms, 203 MACs) |
-| spectral radius / ROA / Monte-Carlo stable | 0.9984 / 100 % / 97 % | 0.9988 / 89 % / 100 % |
-| negative-feedback violation, unconstrained → constrained | 30.2 % → 0 % | 30.1 % → 0.4 % |
+| deployed law | 6.41 % (4 terms, 30 MACs) | 9.63 % (48 terms, 203 MACs) |
+| spectral radius / ROA / Monte-Carlo stable | 0.9984 / 100 % / 96.5 % | 0.9988 / 85 % / 100 % |
+| negative-feedback violation, unconstrained → constrained | 11.4 % → 0.6 % | 4.2 % → 0.6 % |
 
 nMAE is relative to the full actuator range (12 V), predictions clipped to the actuator
 box before scoring.
 
 Two results are negative and are reported as such in the paper: the KAN-selected support
-is statistically indistinguishable from one chosen directly by sparse regression at
-every term budget, and on this benchmark the MPC beats a well-tuned gain-scheduled LQR
+is not measurably better than one chosen directly by sparse regression at any term
+budget or on any of five training seeds, and on this benchmark the MPC beats a well-tuned gain-scheduled LQR
 by only 7–9 %, so the plant cannot demonstrate the value of approximating an optimiser.
 
 ## Scope

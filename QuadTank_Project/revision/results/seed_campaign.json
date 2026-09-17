@@ -1,0 +1,338 @@
+{
+  "config": {
+    "seeds": [
+      42,
+      1,
+      7,
+      13,
+      23
+    ],
+    "baseline_seed": 42,
+    "failed_seeds": [],
+    "note": "models/ restored to the baseline seed after the run"
+  },
+  "per_seed": {
+    "42": {
+      "MP": {
+        "kan_spline": 2.391,
+        "symbolic_raw": 7.762,
+        "symbolic_refit": 5.515,
+        "symbolic_refit_shape_constrained": 5.864,
+        "mlp": 3.191,
+        "deployed_k": 4,
+        "deployed_nmae": 6.413,
+        "deployed_flops": 30,
+        "budgets_compared": 11,
+        "kan_wins": 3,
+        "omp_wins": 8,
+        "max_abs_gap_pp": 0.262
+      },
+      "NMP": {
+        "kan_spline": 4.593,
+        "symbolic_raw": 11.234,
+        "symbolic_refit": 9.106,
+        "symbolic_refit_shape_constrained": 9.765,
+        "mlp": 4.15,
+        "deployed_k": 48,
+        "deployed_nmae": 9.629,
+        "deployed_flops": 203,
+        "budgets_compared": 11,
+        "kan_wins": 1,
+        "omp_wins": 10,
+        "max_abs_gap_pp": 1.367
+      }
+    },
+    "1": {
+      "MP": {
+        "kan_spline": 2.714,
+        "symbolic_raw": 8.367,
+        "symbolic_refit": 5.57,
+        "symbolic_refit_shape_constrained": 5.959,
+        "mlp": 3.191,
+        "deployed_k": 4,
+        "deployed_nmae": 6.413,
+        "deployed_flops": 30,
+        "budgets_compared": 11,
+        "kan_wins": 3,
+        "omp_wins": 8,
+        "max_abs_gap_pp": 0.262
+      },
+      "NMP": {
+        "kan_spline": 6.749,
+        "symbolic_raw": 11.811,
+        "symbolic_refit": 9.106,
+        "symbolic_refit_shape_constrained": 9.765,
+        "mlp": 4.15,
+        "deployed_k": 48,
+        "deployed_nmae": 9.629,
+        "deployed_flops": 203,
+        "budgets_compared": 11,
+        "kan_wins": 1,
+        "omp_wins": 10,
+        "max_abs_gap_pp": 1.367
+      }
+    },
+    "7": {
+      "MP": {
+        "kan_spline": 2.643,
+        "symbolic_raw": 8.671,
+        "symbolic_refit": 5.498,
+        "symbolic_refit_shape_constrained": 5.876,
+        "mlp": 3.191,
+        "deployed_k": 4,
+        "deployed_nmae": 6.413,
+        "deployed_flops": 30,
+        "budgets_compared": 11,
+        "kan_wins": 3,
+        "omp_wins": 8,
+        "max_abs_gap_pp": 0.262
+      },
+      "NMP": {
+        "kan_spline": 4.365,
+        "symbolic_raw": 10.413,
+        "symbolic_refit": 9.106,
+        "symbolic_refit_shape_constrained": 9.765,
+        "mlp": 4.15,
+        "deployed_k": 48,
+        "deployed_nmae": 9.629,
+        "deployed_flops": 203,
+        "budgets_compared": 11,
+        "kan_wins": 1,
+        "omp_wins": 10,
+        "max_abs_gap_pp": 1.367
+      }
+    },
+    "13": {
+      "MP": {
+        "kan_spline": 2.565,
+        "symbolic_raw": 7.879,
+        "symbolic_refit": 5.515,
+        "symbolic_refit_shape_constrained": 5.864,
+        "mlp": 3.191,
+        "deployed_k": 4,
+        "deployed_nmae": 6.413,
+        "deployed_flops": 30,
+        "budgets_compared": 11,
+        "kan_wins": 3,
+        "omp_wins": 8,
+        "max_abs_gap_pp": 0.262
+      },
+      "NMP": {
+        "kan_spline": 8.408,
+        "symbolic_raw": 11.505,
+        "symbolic_refit": 9.106,
+        "symbolic_refit_shape_constrained": 9.765,
+        "mlp": 4.15,
+        "deployed_k": 48,
+        "deployed_nmae": 9.629,
+        "deployed_flops": 203,
+        "budgets_compared": 11,
+        "kan_wins": 1,
+        "omp_wins": 10,
+        "max_abs_gap_pp": 1.367
+      }
+    },
+    "23": {
+      "MP": {
+        "kan_spline": 2.875,
+        "symbolic_raw": 8.967,
+        "symbolic_refit": 5.509,
+        "symbolic_refit_shape_constrained": 5.877,
+        "mlp": 3.191,
+        "deployed_k": 4,
+        "deployed_nmae": 6.413,
+        "deployed_flops": 30,
+        "budgets_compared": 11,
+        "kan_wins": 3,
+        "omp_wins": 8,
+        "max_abs_gap_pp": 0.262
+      },
+      "NMP": {
+        "kan_spline": 5.211,
+        "symbolic_raw": 11.617,
+        "symbolic_refit": 9.106,
+        "symbolic_refit_shape_constrained": 9.765,
+        "mlp": 4.15,
+        "deployed_k": 48,
+        "deployed_nmae": 9.629,
+        "deployed_flops": 203,
+        "budgets_compared": 11,
+        "kan_wins": 1,
+        "omp_wins": 10,
+        "max_abs_gap_pp": 1.367
+      }
+    }
+  },
+  "summary": {
+    "MP": {
+      "kan_spline": {
+        "median": 2.643,
+        "min": 2.391,
+        "max": 2.875,
+        "spread": 0.484,
+        "n_seeds": 5
+      },
+      "symbolic_raw": {
+        "median": 8.367,
+        "min": 7.762,
+        "max": 8.967,
+        "spread": 1.205,
+        "n_seeds": 5
+      },
+      "symbolic_refit": {
+        "median": 5.515,
+        "min": 5.498,
+        "max": 5.57,
+        "spread": 0.072,
+        "n_seeds": 5
+      },
+      "symbolic_refit_shape_constrained": {
+        "median": 5.876,
+        "min": 5.864,
+        "max": 5.959,
+        "spread": 0.095,
+        "n_seeds": 5
+      },
+      "mlp": {
+        "median": 3.191,
+        "min": 3.191,
+        "max": 3.191,
+        "spread": 0.0,
+        "n_seeds": 5
+      },
+      "deployed_nmae": {
+        "median": 6.413,
+        "min": 6.413,
+        "max": 6.413,
+        "spread": 0.0,
+        "n_seeds": 5
+      },
+      "deployed_k": {
+        "median": 4.0,
+        "min": 4.0,
+        "max": 4.0,
+        "spread": 0.0,
+        "n_seeds": 5
+      },
+      "kan_wins_per_seed": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "omp_wins_per_seed": [
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "kan_ever_dominates": false
+    },
+    "NMP": {
+      "kan_spline": {
+        "median": 5.211,
+        "min": 4.365,
+        "max": 8.408,
+        "spread": 4.043,
+        "n_seeds": 5
+      },
+      "symbolic_raw": {
+        "median": 11.505,
+        "min": 10.413,
+        "max": 11.811,
+        "spread": 1.398,
+        "n_seeds": 5
+      },
+      "symbolic_refit": {
+        "median": 9.106,
+        "min": 9.106,
+        "max": 9.106,
+        "spread": 0.0,
+        "n_seeds": 5
+      },
+      "symbolic_refit_shape_constrained": {
+        "median": 9.765,
+        "min": 9.765,
+        "max": 9.765,
+        "spread": 0.0,
+        "n_seeds": 5
+      },
+      "mlp": {
+        "median": 4.15,
+        "min": 4.15,
+        "max": 4.15,
+        "spread": 0.0,
+        "n_seeds": 5
+      },
+      "deployed_nmae": {
+        "median": 9.629,
+        "min": 9.629,
+        "max": 9.629,
+        "spread": 0.0,
+        "n_seeds": 5
+      },
+      "deployed_k": {
+        "median": 48.0,
+        "min": 48.0,
+        "max": 48.0,
+        "spread": 0.0,
+        "n_seeds": 5
+      },
+      "kan_wins_per_seed": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "omp_wins_per_seed": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "kan_ever_dominates": false
+    }
+  },
+  "monte_carlo_wilson95": {
+    "MP": {
+      "n_samples": 200,
+      "stable_fraction_pct": 96.5,
+      "stable_fraction_wilson95_pct": [
+        92.95,
+        98.29
+      ],
+      "overflow_fraction_pct": 0.0,
+      "overflow_fraction_wilson95_pct": [
+        0.0,
+        1.88
+      ],
+      "dryout_fraction_pct": 0.0,
+      "dryout_fraction_wilson95_pct": [
+        0.0,
+        1.88
+      ]
+    },
+    "NMP": {
+      "n_samples": 200,
+      "stable_fraction_pct": 100.0,
+      "stable_fraction_wilson95_pct": [
+        98.12,
+        100.0
+      ],
+      "overflow_fraction_pct": 0.0,
+      "overflow_fraction_wilson95_pct": [
+        0.0,
+        1.88
+      ],
+      "dryout_fraction_pct": 0.0,
+      "dryout_fraction_wilson95_pct": [
+        0.0,
+        1.88
+      ]
+    }
+  }
+}

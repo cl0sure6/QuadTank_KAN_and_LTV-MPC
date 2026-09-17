@@ -107,6 +107,7 @@ def sweep(ds, support, budgets, Fc, log, tag, regime, certify=True):
     for k in budgets:
         k = int(min(k, len(support)))
         subs, coefs, viol, viol_un = [], [], [], []
+        viol_x, viol_x_un = [], []
         preds = np.zeros_like(ds["test"][1])
         preds_un = np.zeros_like(ds["test"][1])
         for j in (0, 1):
@@ -117,7 +118,7 @@ def sweep(ds, support, budgets, Fc, log, tag, regime, certify=True):
                 sel = np.array([0])
             sub = [support[i] for i in sel]
             A = SY.design(ds["train"][0], sub) * w
-            G, g0 = SY.total_shape_rows(Fc, sub, j, regime)
+            G, g0 = SY.shape_rows_for_output(Fc, sub, j, regime)
             c_un = SY.fit_unconstrained(A, ds["train"][1][:, j])
             c, _ = SY.fit_shape_constrained(A, ds["train"][1][:, j], G=G, g0=g0)
             preds[:, j] = SY.design(ds["test"][0], sub) @ c
@@ -125,6 +126,11 @@ def sweep(ds, support, budgets, Fc, log, tag, regime, certify=True):
             subs.append(sub); coefs.append(c)
             viol.append(SY.total_sign_violation(c, Fc, sub, j, regime))
             viol_un.append(SY.total_sign_violation(c_un, Fc, sub, j, regime))
+            # cross-channel violation is tracked in both regimes, whether or not
+            # it is constrained, so the effect of constraining it is measurable
+            xi = 1 - j
+            viol_x.append(SY.total_sign_violation(c, Fc, sub, j, regime, i=xi))
+            viol_x_un.append(SY.total_sign_violation(c_un, Fc, sub, j, regime, i=xi))
         e = nmae(preds, ds)
         e_un = nmae(preds_un, ds)
         fl = sum(SY.flops(s) for s in subs) + PF.CORE_FLOPS
@@ -137,6 +143,8 @@ def sweep(ds, support, budgets, Fc, log, tag, regime, certify=True):
                         n_terms=[len(s) for s in subs],
                         sign_violation=[float(v) for v in viol],
                         sign_violation_unconstrained=[float(v) for v in viol_un],
+                        cross_sign_violation=[float(v) for v in viol_x],
+                        cross_sign_violation_unconstrained=[float(v) for v in viol_x_un],
                         _subs=subs, _coefs=coefs))
         cmsg = ("" if not cert else
                 f"  rho={cert['max_spectral_radius']:.5f}"
@@ -159,7 +167,7 @@ def main():
         log(f"=== {regime} ===")
         ds = load(regime)
         rng = np.random.default_rng(0)
-        Fc = SY.constraint_points(ds["train"][0], rng)
+        Fc = SY.constraint_points(ds["train"][0], rng, reg=PF.REGIMES[regime])
 
         with open(os.path.join(MODELS, f"symbolic_{regime}.json")) as fh:
             forms = json.load(fh)["pretty"]

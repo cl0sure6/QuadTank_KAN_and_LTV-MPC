@@ -207,12 +207,44 @@ def equilibrium_rows(support, reg, n_ref=120, box=(7.0, 15.0), seed=0):
     return design(np.array(F), support) if F else None
 
 
-def constraint_points(F, rng, n_grid=800):
-    """Sample points at which the shape constraint is imposed: a subsample of
-    the data plus i.i.d. points from the observed feature box."""
+def constraint_points(F, rng, n_grid=800, reg=None, box=(7.0, 15.0)):
+    """Points at which the shape constraint is imposed.
+
+    Half are resampled training points. The other half used to be drawn i.i.d.
+    from the observed feature box, which is a product set and therefore contains
+    combinations the plant cannot occupy: phi carries the levels x/X_n and the
+    errors (r-x)/X_n together, so an independent draw can pair a nearly full
+    tank with a large positive error, implying a reference far outside the tank.
+    Enforcing a sign condition at such a point costs imitation accuracy and buys
+    nothing, because the closed loop never visits it.
+
+    When `reg` is supplied the synthetic half is instead generated as realizable
+    (x, r) pairs: r is an exact equilibrium of the plant and x is a state drawn
+    around it, so every constraint point corresponds to an operating condition
+    the controller can actually meet.
+    """
     idx = rng.choice(len(F), size=min(n_grid, len(F)), replace=False)
+    if reg is None:
+        lo, hi = F.min(0), F.max(0)
+        grid = rng.uniform(lo, hi, size=(n_grid, F.shape[1]))
+        return np.vstack([F[idx], grid])
+
+    import qtlib as Q
     lo, hi = F.min(0), F.max(0)
-    grid = rng.uniform(lo, hi, size=(n_grid, F.shape[1]))
+    rows, tries = [], 0
+    while len(rows) < n_grid and tries < 40 * n_grid:
+        tries += 1
+        h1, h2 = rng.uniform(*box, 2)
+        try:
+            x_eq, _ = Q.equilibrium(h1, h2, reg)
+        except ValueError:
+            continue
+        # tracking errors of the size the closed loop actually produces
+        x = x_eq + np.concatenate([rng.uniform(-4.0, 4.0, 2),
+                                   rng.uniform(-2.0, 2.0, 2)])
+        x = np.clip(x, Q.H_MIN + 0.5, Q.H_MAX - 0.5)
+        rows.append(Q.features(x, x_eq).ravel())
+    grid = np.clip(np.array(rows), lo, hi)
     return np.vstack([F[idx], grid])
 
 
@@ -316,36 +348,68 @@ def fit_joint_stable(A_tr, Y, G, Aeq, sdata, rho_max=0.999, ridge=1e-8,
 
 
 
-def total_shape_rows(F, support, j, regime):
+def total_shape_rows(F, support, j, regime, i=None):
     """
     Rows and offsets of the negative-feedback constraint for the FULL deployed
     law of policyform.py,
 
         u_j = u_eq,j(r) + (K e)_j + w(e) * U_max * c_j' m(phi),
 
-    differentiated with respect to phi_{j+4} = e_j / X_n:
+    differentiated with respect to phi_{i+4} = e_i / X_n:
 
-        d u_j / d phi_{j+4}
-            = X_n K_jj  +  U_max [ (dw/dphi_{j+4}) m(phi)' c_j
-                                 + w(phi) (dm/dphi_{j+4})' c_j ].
+        d u_j / d phi_{i+4}
+            = X_n K_ji  +  U_max [ (dw/dphi_{i+4}) m(phi)' c_j
+                                 + w(phi) (dm/dphi_{i+4})' c_j ].
 
     The first term is a constant offset and the rest is linear in c_j, so the
-    requirement  d u_j / d phi_{j+4} >= 0  is the affine inequality
+    requirement  d u_j / d phi_{i+4} >= 0  is the affine inequality
     G c_j >= -g0.
+
+    `i` defaults to `j`, giving the own-channel constraint. Passing i != j gives
+    the cross-channel constraint, which is affine in exactly the same way.
     """
     import policyform as PF
     import qtlib as Q
     F = np.asarray(F, float).reshape(-1, NVAR)
-    v = 4 + j
+    i = j if i is None else i
+    v = 4 + i
     w = PF.gate(F)[:, None]
     dw = PF.dgate(F, v)[:, None]
     M = design(F, support)
     dM = d_design(F, support, v)
     G = Q.NORM_U * (dw * M + w * dM)
-    g0 = np.full(len(F), Q.NORM_X * PF.lqr_gain(regime)[j, j])
+    g0 = np.full(len(F), Q.NORM_X * PF.lqr_gain(regime)[j, i])
     return G, g0
 
 
-def total_sign_violation(c, F, support, j, regime):
+# Channels whose CROSS derivatives are additionally constrained, per regime.
+# In the non-minimum-phase configuration the valve split sends most of each
+# pump's flow to the *other* upper tank, so the teacher's cross response is
+# large and strictly positive over the operating box (stage 4c). Constraining
+# it there is physically justified and costs almost nothing, because the
+# unconstrained read-out already nearly satisfies it. In the minimum-phase
+# configuration the teacher's cross gains are two orders of magnitude smaller
+# than its own-channel gains and change sign, so their sign carries no physical
+# requirement and is deliberately left free.
+CROSS_CONSTRAINED = {"MP": False, "NMP": True}
+
+
+def shape_rows_for_output(F, support, j, regime):
+    """Stacked shape-constraint rows for pump j: own channel always, cross
+    channel too where the regime justifies it."""
     G, g0 = total_shape_rows(F, support, j, regime)
+    if not CROSS_CONSTRAINED.get(regime, False):
+        return G, g0
+    blocks, offs = [G], [g0]
+    for i in (0, 1):
+        if i == j:
+            continue
+        Gi, gi = total_shape_rows(F, support, j, regime, i=i)
+        blocks.append(Gi)
+        offs.append(gi)
+    return np.vstack(blocks), np.concatenate(offs)
+
+
+def total_sign_violation(c, F, support, j, regime, i=None):
+    G, g0 = total_shape_rows(F, support, j, regime, i=i)
     return float(((G @ c + g0) < 0).mean())

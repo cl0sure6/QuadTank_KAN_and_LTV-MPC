@@ -66,7 +66,9 @@ U_RANGE = Q.U_MAX - Q.U_MIN
 KAN_WIDTH = [8, 5, 2]
 KAN_GRID = 8
 KAN_K = 3
-KAN_SEED = 42
+# Default 42 reproduces the deployed law. Stage 9 overrides it through the
+# environment to measure how much of the result depends on this one draw.
+KAN_SEED = int(os.environ.get("KAN_SEED", "42"))
 KAN_STEPS_1 = 40
 KAN_STEPS_2 = 25
 KAN_LAMB = 1e-4          # sparsification weight
@@ -182,7 +184,7 @@ def symbolic_refit(regime, ds, formulas, log):
     """
     tr, te = ds["train"], ds["test"]
     rng = np.random.default_rng(0)
-    Fc = SY.constraint_points(tr[0], rng)
+    Fc = SY.constraint_points(tr[0], rng, reg=PF.REGIMES[regime])
     w_tr = PF.gate(tr[0])[:, None]
 
     res, coefs, supports = {}, [], []
@@ -192,7 +194,7 @@ def symbolic_refit(regime, ds, formulas, log):
         sup = SY.formula_support(f)
         A_tr = SY.design(tr[0], sup) * w_tr
         A_te = SY.design(te[0], sup)
-        G, g0 = SY.total_shape_rows(Fc, sup, j, regime)
+        G, g0 = SY.shape_rows_for_output(Fc, sup, j, regime)
         c_un = SY.fit_unconstrained(A_tr, tr[1][:, j])
         c_sc, ok = SY.fit_shape_constrained(A_tr, tr[1][:, j], G=G, g0=g0)
         pred_un[:, j] = A_te @ c_un

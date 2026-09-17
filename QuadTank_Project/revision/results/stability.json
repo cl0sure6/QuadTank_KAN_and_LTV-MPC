@@ -6,7 +6,7 @@
           9.0,
           9.0
         ],
-        "spectral_radius": 0.9980078613722152,
+        "spectral_radius": 0.9980078613781037,
         "converged_to_fixed_point": true,
         "fixed_point_cm": [
           9.0,
@@ -19,14 +19,14 @@
         "max_abs_offset_cm": 0.0,
         "locally_stable": true,
         "offset_from_equilibrium_cm": 0.0,
-        "lyapunov_P_cond": 9.243503406842686
+        "lyapunov_P_cond": 9.243503424814136
       },
       {
         "ref": [
           10.0,
           10.0
         ],
-        "spectral_radius": 0.9981060418952374,
+        "spectral_radius": 0.9981060418963335,
         "converged_to_fixed_point": true,
         "fixed_point_cm": [
           10.0,
@@ -39,14 +39,14 @@
         "max_abs_offset_cm": 0.0,
         "locally_stable": true,
         "offset_from_equilibrium_cm": 0.0,
-        "lyapunov_P_cond": 9.741959008070179
+        "lyapunov_P_cond": 9.741959054472543
       },
       {
         "ref": [
           12.0,
           12.0
         ],
-        "spectral_radius": 0.9982649948917678,
+        "spectral_radius": 0.9982649948737808,
         "converged_to_fixed_point": true,
         "fixed_point_cm": [
           12.0,
@@ -59,14 +59,14 @@
         "max_abs_offset_cm": 0.0,
         "locally_stable": true,
         "offset_from_equilibrium_cm": 0.0,
-        "lyapunov_P_cond": 10.697223443673007
+        "lyapunov_P_cond": 10.697223352566027
       },
       {
         "ref": [
           13.0,
           9.0
         ],
-        "spectral_radius": 0.9983592528882042,
+        "spectral_radius": 0.9983592528705413,
         "converged_to_fixed_point": true,
         "fixed_point_cm": [
           13.0,
@@ -79,14 +79,14 @@
         "max_abs_offset_cm": 0.0,
         "locally_stable": true,
         "offset_from_equilibrium_cm": 0.0,
-        "lyapunov_P_cond": 11.096413218414227
+        "lyapunov_P_cond": 11.096413079489908
       },
       {
         "ref": [
           9.0,
           13.0
         ],
-        "spectral_radius": 0.9981074660876608,
+        "spectral_radius": 0.9981074660902975,
         "converged_to_fixed_point": true,
         "fixed_point_cm": [
           9.0,
@@ -99,14 +99,14 @@
         "max_abs_offset_cm": 0.0,
         "locally_stable": true,
         "offset_from_equilibrium_cm": 0.0,
-        "lyapunov_P_cond": 11.019739399983498
+        "lyapunov_P_cond": 11.019739431820136
       },
       {
         "ref": [
           14.0,
           14.0
         ],
-        "spectral_radius": 0.9983892429197035,
+        "spectral_radius": 0.9983892429200321,
         "converged_to_fixed_point": true,
         "fixed_point_cm": [
           14.0,
@@ -119,10 +119,10 @@
         "max_abs_offset_cm": 0.0,
         "locally_stable": true,
         "offset_from_equilibrium_cm": 0.0,
-        "lyapunov_P_cond": 11.60324420246301
+        "lyapunov_P_cond": 11.603244205128147
       }
     ],
-    "max_spectral_radius": 0.9983892429197035,
+    "max_spectral_radius": 0.9983892429200321,
     "all_locally_stable": true,
     "roa_estimate": {
       "grid_cm": [
@@ -643,25 +643,25 @@
         19.0
       ],
       "violation_fraction": 0.0,
-      "median_dV": -108.34267802081285,
+      "median_dV": -108.58317099588021,
       "note": "V is the local Lyapunov function from (S1); a nonzero violation fraction far from the equilibrium is expected and does not by itself imply instability"
     },
     "monte_carlo_robustness": {
       "n": 200,
       "parameter_spread_pct": 20.0,
-      "stable_fraction": 0.97,
+      "stable_fraction": 0.965,
       "overflow_fraction": 0.0,
       "dryout_fraction": 0.0,
-      "mean_input_saturation_fraction": 0.017378750000000002,
+      "mean_input_saturation_fraction": 0.019798749999999997,
       "h1_err_cm": {
-        "mean": 0.0017261426965498928,
-        "std": 0.3601459390385992,
-        "p95_abs": 0.6550985621151706
+        "mean": -0.02387302392685055,
+        "std": 0.35528841416420087,
+        "p95_abs": 0.6833421880853617
       },
       "h2_err_cm": {
-        "mean": 0.024661668914340504,
-        "std": 0.5141786749026861,
-        "p95_abs": 1.0805765453297045
+        "mean": 0.015402816262510798,
+        "std": 0.5174561716122216,
+        "p95_abs": 1.0865753792452646
       }
     },
     "constraint_satisfaction": {
@@ -670,9 +670,9 @@
         "settling_window_ignored_s": 20.0,
         "overflow_fraction": 0.0,
         "dryout_fraction": 0.10416666666666667,
-        "max_level_observed_cm": 17.14017593552788,
+        "max_level_observed_cm": 15.903148460075892,
         "min_level_observed_cm": 0.0,
-        "mean_input_saturation_fraction": 0.05955208333333334
+        "mean_input_saturation_fraction": 0.05958333333333332
       },
       "LTV-MPC": {
         "n_tasks": 48,
@@ -710,7 +710,7 @@
           9.0,
           9.0
         ],
-        "spectral_radius": 0.9984650602130268,
+        "spectral_radius": 0.9984650601366677,
         "converged_to_fixed_point": true,
         "fixed_point_cm": [
           9.0,
@@ -723,14 +723,14 @@
         "max_abs_offset_cm": 0.0,
         "locally_stable": true,
         "offset_from_equilibrium_cm": 0.0,
-        "lyapunov_P_cond": 11.248582076665276
+        "lyapunov_P_cond": 11.248581539788425
       },
       {
         "ref": [
           10.0,
           10.0
         ],
-        "spectral_radius": 0.9985439557980652,
+        "spectral_radius": 0.9985439557773362,
         "converged_to_fixed_point": true,
         "fixed_point_cm": [
           10.0,
@@ -743,14 +743,14 @@
         "max_abs_offset_cm": 0.0,
         "locally_stable": true,
         "offset_from_equilibrium_cm": 0.0,
-        "lyapunov_P_cond": 11.77305157121276
+        "lyapunov_P_cond": 11.773051480237752
       },
       {
         "ref": [
           12.0,
           12.0
         ],
-        "spectral_radius": 0.9986710138109486,
+        "spectral_radius": 0.9986710137580928,
         "converged_to_fixed_point": true,
         "fixed_point_cm": [
           12.0,
@@ -763,14 +763,14 @@
         "max_abs_offset_cm": 0.0,
         "locally_stable": true,
         "offset_from_equilibrium_cm": 0.0,
-        "lyapunov_P_cond": 12.74841292432376
+        "lyapunov_P_cond": 12.748412521497459
       },
       {
         "ref": [
           13.0,
           9.0
         ],
-        "spectral_radius": 0.9985819099608514,
+        "spectral_radius": 0.9985819098723844,
         "converged_to_fixed_point": true,
         "fixed_point_cm": [
           13.0,
@@ -783,14 +783,14 @@
         "max_abs_offset_cm": 0.0,
         "locally_stable": true,
         "offset_from_equilibrium_cm": 0.0,
-        "lyapunov_P_cond": 12.393321592169025
+        "lyapunov_P_cond": 12.393320963570952
       },
       {
         "ref": [
           9.0,
           13.0
         ],
-        "spectral_radius": 0.9986239204787413,
+        "spectral_radius": 0.9986239205227023,
         "converged_to_fixed_point": true,
         "fixed_point_cm": [
           9.0,
@@ -803,14 +803,14 @@
         "max_abs_offset_cm": 0.0,
         "locally_stable": true,
         "offset_from_equilibrium_cm": 0.0,
-        "lyapunov_P_cond": 12.271071790345514
+        "lyapunov_P_cond": 12.271072171140341
       },
       {
         "ref": [
           14.0,
           14.0
         ],
-        "spectral_radius": 0.9987697429598065,
+        "spectral_radius": 0.9987697430143566,
         "converged_to_fixed_point": true,
         "fixed_point_cm": [
           14.0,
@@ -823,10 +823,10 @@
         "max_abs_offset_cm": 0.0,
         "locally_stable": true,
         "offset_from_equilibrium_cm": 0.0,
-        "lyapunov_P_cond": 13.6450633812792
+        "lyapunov_P_cond": 13.645064015562117
       }
     ],
-    "max_spectral_radius": 0.9987697429598065,
+    "max_spectral_radius": 0.9987697430143566,
     "all_locally_stable": true,
     "roa_estimate": {
       "grid_cm": [
@@ -892,6 +892,29 @@
           true,
           true,
           true,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
           true,
           false,
           false,
@@ -916,29 +939,6 @@
           true,
           true,
           true,
-          false,
-          false,
-          false,
-          false,
-          false
-        ],
-        [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
           true,
           false,
           false,
@@ -963,7 +963,7 @@
           true,
           true,
           true,
-          true,
+          false,
           false,
           false,
           false
@@ -987,7 +987,7 @@
           true,
           true,
           true,
-          true,
+          false,
           false,
           false
         ],
@@ -1034,6 +1034,29 @@
           true,
           true,
           true,
+          false,
+          false
+        ],
+        [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
           true,
           false
         ],
@@ -1084,75 +1107,6 @@
           true
         ],
         [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true
-        ],
-        [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true
-        ],
-        [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true
-        ],
-        [
           false,
           true,
           true,
@@ -1177,7 +1131,7 @@
         ],
         [
           false,
-          false,
+          true,
           true,
           true,
           true,
@@ -1271,7 +1225,7 @@
           false,
           false,
           false,
-          true,
+          false,
           true,
           true,
           true,
@@ -1294,7 +1248,7 @@
           false,
           false,
           false,
-          true,
+          false,
           true,
           true,
           true,
@@ -1317,8 +1271,54 @@
           false,
           false,
           false,
+          false,
+          false,
           true,
           true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
           true,
           true,
           true,
@@ -1337,7 +1337,7 @@
           true
         ]
       ],
-      "converged_fraction": 0.891156462585034,
+      "converged_fraction": 0.8503401360544217,
       "note": "lower tanks initialised at the equilibrium of the commanded reference"
     },
     "sampled_lyapunov": {
@@ -1346,8 +1346,8 @@
         1.0,
         19.0
       ],
-      "violation_fraction": 0.0013,
-      "median_dV": -89.87257973141004,
+      "violation_fraction": 0.0035,
+      "median_dV": -78.22965605616264,
       "note": "V is the local Lyapunov function from (S1); a nonzero violation fraction far from the equilibrium is expected and does not by itself imply instability"
     },
     "monte_carlo_robustness": {
@@ -1356,27 +1356,27 @@
       "stable_fraction": 1.0,
       "overflow_fraction": 0.0,
       "dryout_fraction": 0.0,
-      "mean_input_saturation_fraction": 0.023781249999999997,
+      "mean_input_saturation_fraction": 0.025565,
       "h1_err_cm": {
-        "mean": -0.028454898121288288,
-        "std": 0.9699692827982621,
-        "p95_abs": 1.7852497345846743
+        "mean": -0.051666284195141625,
+        "std": 0.9729748194341363,
+        "p95_abs": 1.8465958637350792
       },
       "h2_err_cm": {
-        "mean": 0.16562798346625435,
-        "std": 1.1405830876048313,
-        "p95_abs": 2.137847281682494
+        "mean": 0.15127334682745394,
+        "std": 1.1358027931413814,
+        "p95_abs": 2.096425884247867
       }
     },
     "constraint_satisfaction": {
       "Symbolic KAN": {
         "n_tasks": 48,
         "settling_window_ignored_s": 20.0,
-        "overflow_fraction": 0.0,
+        "overflow_fraction": 0.020833333333333332,
         "dryout_fraction": 0.0,
-        "max_level_observed_cm": 18.36408835452821,
-        "min_level_observed_cm": 0.16542034433022001,
-        "mean_input_saturation_fraction": 0.028854166666666667
+        "max_level_observed_cm": 22.71040308719276,
+        "min_level_observed_cm": 0.0017059823053885666,
+        "mean_input_saturation_fraction": 0.04761458333333334
       },
       "LTV-MPC": {
         "n_tasks": 48,

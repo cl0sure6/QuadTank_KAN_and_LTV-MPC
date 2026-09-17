@@ -1,9 +1,9 @@
-# Certifiable approximation of model predictive control laws
+# Structural guarantees in the approximation of model predictive control laws
 
-**Author:** Adilkhan Salkimbayev — **Licence:** Apache-2.0 — **Status:** manuscript under review
+**Author:** Adilkhan Salkimbayev — **Licence:** Apache-2.0 — **Status:** major revision under review at *Journal of Process Control*
 
-Code and data for a study of what can and cannot be certified about an offline
-approximation of a linear time-varying MPC law, on the Johansson quadruple-tank
+Code and data for a study of which guarantees survive an offline
+approximation of a linear time-varying MPC law, and which only appear to, on the Johansson quadruple-tank
 benchmark in both its minimum-phase (MP) and non-minimum-phase (NMP) configurations.
 
 Everything reported in the accompanying manuscript is produced by the numbered stage
@@ -24,15 +24,19 @@ with a gate `w(e) = min(||e||^2 / s^2, 1)` that vanishes quadratically at the se
 
 | Finding | Evidence |
 |---|---|
-| The **symbolic read-out**, not the network, is a dominant error source | MP: a 2.43 % imitation error becomes 7.85 % under off-the-shelf `auto_symbolic`; a convex refit recovers it to 5.51 %. NMP: 4.45 % → 10.97 % → 9.11 % |
-| An unconstrained read-out **violates negative feedback** on up to 30 % of the operating box | Driven to 0 % (MP) / 0.4 % (NMP) by an affine inequality inside a convex least-squares fit, for ≤ 0.2 pp of accuracy — and in NMP the constraint *improves* accuracy |
+| The **symbolic read-out**, not the network, is a dominant error source | MP: a 2.43 % imitation error becomes 7.78 % under off-the-shelf `auto_symbolic`; a convex refit recovers it to 5.51 %. NMP: 4.37 % → 11.24 % → 9.11 % |
+| An unconstrained read-out **violates negative feedback** on up to 11 % of realizable operating points | Driven to ≤ 0.6 % in both regimes by an affine inequality inside a convex least-squares fit. It costs 0.35 pp (MP) and 0.66 pp (NMP) on the full support; at the deployed 4-term MP budget it *improves* accuracy by 2.16 pp |
 | The gate makes **zero steady-state offset and local stability structural** | Substituting random coefficients (σ up to 100) leaves the closed-loop spectral radius unchanged to ~1e-10 |
-| KAN support selection is **not measurably better** than direct sparse regression | Across 11 term budgets × 2 regimes the two curves sit within a few tenths of a percentage point of each other; neither dominates |
+| KAN support selection is **not measurably better** than direct sparse regression | Across 11 term budgets × 2 regimes the two curves sit within a few tenths of a percentage point of each other, on every one of 5 training seeds |
 | The benchmark **cannot justify distillation** | With a horizon that spans the inverse response the MPC beats a well-tuned gain-scheduled LQR by only 7–9 %, so there is little for any approximator to lose |
 
-Deployed law: **4 terms/pump (MP, 30 multiply–accumulates)** and **48 terms/pump
-(NMP, 203)**, certified locally exponentially stable (ρ ≤ 0.9988) at every set-point
-tested, 97–100 % stable under ±20 % parameter perturbation.
+Deployed law: **4 terms/pump (MP, 30 multiply–accumulates, 6.41 % nMAE)** and
+**48 terms/pump (NMP, 203, 9.63 %)**, certified locally exponentially stable
+(ρ ≤ 0.9988) at every set-point tested, 96.5–100 % stable under ±20 % perturbation
+of valve ratios and pump gains and 95–97 % with outlet areas, actuator delay and
+measurement noise perturbed as well. It is also the only one of eight approximants
+of the same policy that overflows a tank on an aggressive fill inside its training
+envelope — reported as a limitation, not smoothed over.
 
 ### Two benchmark properties the design turns on
 
@@ -130,6 +134,9 @@ python s05_scenarios.py            # ~12 min  closed-loop scenario campaign
 python s06_make_figures.py         # ~1 min   figures
 python s07_make_tables.py          # <1 min   LaTeX tables
 python s08_key_numbers.py          # <1 min   every number quoted in the prose
+python s04c_cross_channel.py       # ~3 min   own- vs cross-channel derivatives, law vs teacher
+python s09_seed_campaign.py        # ~2.5 h   how much the result depends on the training seed
+python s10_constraint_robustness.py# ~20 min  active state constraint + widened robustness
 ```
 
 Stage 0 runs first because every later stage inherits the horizon it settles; it is the

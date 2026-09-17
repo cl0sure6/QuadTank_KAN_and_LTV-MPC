@@ -3,11 +3,11 @@
     "kan_support_curve": [
       {
         "k": 4,
-        "nmae": 6.163935149512931,
+        "nmae": 6.4125581269015415,
         "nmae_unconstrained": 8.568187693507804,
         "flops": 30,
         "certificate": {
-          "max_spectral_radius": 0.9983892429197035,
+          "max_spectral_radius": 0.9983892429200321,
           "all_locally_stable": true,
           "worst_offset_cm": 0.0,
           "all_fixed_points_found": true
@@ -21,17 +21,25 @@
           0.0
         ],
         "sign_violation_unconstrained": [
-          0.01375,
-          0.0275
+          0.071875,
+          0.07875
+        ],
+        "cross_sign_violation": [
+          0.31625,
+          0.164375
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.351875,
+          0.201875
         ]
       },
       {
         "k": 6,
-        "nmae": 7.379791483659139,
+        "nmae": 7.4259789893484625,
         "nmae_unconstrained": 8.52663194559603,
         "flops": 42,
         "certificate": {
-          "max_spectral_radius": 0.998389242900396,
+          "max_spectral_radius": 0.9983892428710313,
           "all_locally_stable": true,
           "worst_offset_cm": 0.0,
           "all_fixed_points_found": true
@@ -45,17 +53,25 @@
           0.0
         ],
         "sign_violation_unconstrained": [
-          0.015625,
-          0.2625
+          0.074375,
+          0.085625
+        ],
+        "cross_sign_violation": [
+          0.276875,
+          0.155625
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.318125,
+          0.205
         ]
       },
       {
         "k": 8,
-        "nmae": 6.995889272765347,
+        "nmae": 6.829193808325443,
         "nmae_unconstrained": 7.859816145032639,
         "flops": 49,
         "certificate": {
-          "max_spectral_radius": 0.9983892428996487,
+          "max_spectral_radius": 0.9983892429127524,
           "all_locally_stable": true,
           "worst_offset_cm": 0.0,
           "all_fixed_points_found": true
@@ -69,17 +85,25 @@
           0.0
         ],
         "sign_violation_unconstrained": [
-          0.230625,
-          0.291875
+          0.073125,
+          0.08875
+        ],
+        "cross_sign_violation": [
+          0.335,
+          0.115625
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.27625,
+          0.1725
         ]
       },
       {
         "k": 12,
-        "nmae": 7.2334349270036205,
+        "nmae": 6.70637166546556,
         "nmae_unconstrained": 7.36932689433709,
         "flops": 64,
         "certificate": {
-          "max_spectral_radius": 0.9983892428951217,
+          "max_spectral_radius": 0.9983892429269938,
           "all_locally_stable": true,
           "worst_offset_cm": 0.0,
           "all_fixed_points_found": true
@@ -93,135 +117,23 @@
           0.0
         ],
         "sign_violation_unconstrained": [
-          0.2825,
-          0.300625
+          0.09,
+          0.09625
+        ],
+        "cross_sign_violation": [
+          0.400625,
+          0.118125
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.1925,
+          0.14
         ]
       },
       {
         "k": 16,
-        "nmae": 6.671525550463909,
+        "nmae": 6.37300219360137,
         "nmae_unconstrained": 7.007505544350735,
         "flops": 79,
-        "certificate": {
-          "max_spectral_radius": 0.9983892429216306,
-          "all_locally_stable": true,
-          "worst_offset_cm": 0.0,
-          "all_fixed_points_found": true
-        },
-        "n_terms": [
-          16,
-          16
-        ],
-        "sign_violation": [
-          0.0,
-          0.0
-        ],
-        "sign_violation_unconstrained": [
-          0.285625,
-          0.2975
-        ]
-      },
-      {
-        "k": 24,
-        "nmae": 7.041452993879159,
-        "nmae_unconstrained": 6.825470531592388,
-        "flops": 109,
-        "certificate": {
-          "max_spectral_radius": 0.9983892428721448,
-          "all_locally_stable": true,
-          "worst_offset_cm": 0.0,
-          "all_fixed_points_found": true
-        },
-        "n_terms": [
-          24,
-          24
-        ],
-        "sign_violation": [
-          0.0,
-          0.0
-        ],
-        "sign_violation_unconstrained": [
-          0.2975,
-          0.288125
-        ]
-      },
-      {
-        "k": 32,
-        "nmae": 7.095116499188786,
-        "nmae_unconstrained": 6.6383137296139685,
-        "flops": 141,
-        "certificate": {
-          "max_spectral_radius": 0.9983892428976316,
-          "all_locally_stable": true,
-          "worst_offset_cm": 0.0,
-          "all_fixed_points_found": true
-        },
-        "n_terms": [
-          32,
-          32
-        ],
-        "sign_violation": [
-          0.0,
-          0.0
-        ],
-        "sign_violation_unconstrained": [
-          0.2925,
-          0.3025
-        ]
-      },
-      {
-        "k": 48,
-        "nmae": 6.278132561169639,
-        "nmae_unconstrained": 6.186443363853648,
-        "flops": 205,
-        "certificate": {
-          "max_spectral_radius": 0.9983892428723977,
-          "all_locally_stable": true,
-          "worst_offset_cm": 0.0,
-          "all_fixed_points_found": true
-        },
-        "n_terms": [
-          48,
-          48
-        ],
-        "sign_violation": [
-          0.0,
-          0.0
-        ],
-        "sign_violation_unconstrained": [
-          0.201875,
-          0.188125
-        ]
-      },
-      {
-        "k": 64,
-        "nmae": 6.133580603101865,
-        "nmae_unconstrained": 6.107601338911986,
-        "flops": 268,
-        "certificate": {
-          "max_spectral_radius": 0.9983892429194493,
-          "all_locally_stable": true,
-          "worst_offset_cm": 0.0,
-          "all_fixed_points_found": true
-        },
-        "n_terms": [
-          64,
-          64
-        ],
-        "sign_violation": [
-          0.0,
-          0.0
-        ],
-        "sign_violation_unconstrained": [
-          0.168125,
-          0.18875
-        ]
-      },
-      {
-        "k": 96,
-        "nmae": 5.88288998137012,
-        "nmae_unconstrained": 5.887591446632615,
-        "flops": 392,
         "certificate": {
           "max_spectral_radius": 0.9983892428692207,
           "all_locally_stable": true,
@@ -229,152 +141,6 @@
           "all_fixed_points_found": true
         },
         "n_terms": [
-          96,
-          96
-        ],
-        "sign_violation": [
-          0.0,
-          0.0
-        ],
-        "sign_violation_unconstrained": [
-          0.125,
-          0.1425
-        ]
-      },
-      {
-        "k": 144,
-        "nmae": 5.7314237836333914,
-        "nmae_unconstrained": 5.512794494207643,
-        "flops": 580,
-        "certificate": {
-          "max_spectral_radius": 0.9983892428914789,
-          "all_locally_stable": true,
-          "worst_offset_cm": 0.0,
-          "all_fixed_points_found": true
-        },
-        "n_terms": [
-          144,
-          144
-        ],
-        "sign_violation": [
-          0.0,
-          0.0
-        ],
-        "sign_violation_unconstrained": [
-          0.125625,
-          0.130625
-        ]
-      }
-    ],
-    "direct_polynomial_curve": [
-      {
-        "k": 4,
-        "nmae": 6.163935149512931,
-        "nmae_unconstrained": 8.568187693507804,
-        "flops": 30,
-        "certificate": {
-          "max_spectral_radius": 0.9983892429197035,
-          "all_locally_stable": true,
-          "worst_offset_cm": 0.0,
-          "all_fixed_points_found": true
-        },
-        "n_terms": [
-          4,
-          4
-        ],
-        "sign_violation": [
-          0.0,
-          0.0
-        ],
-        "sign_violation_unconstrained": [
-          0.01375,
-          0.0275
-        ]
-      },
-      {
-        "k": 6,
-        "nmae": 7.379791483659139,
-        "nmae_unconstrained": 8.52663194559603,
-        "flops": 42,
-        "certificate": {
-          "max_spectral_radius": 0.998389242900396,
-          "all_locally_stable": true,
-          "worst_offset_cm": 0.0,
-          "all_fixed_points_found": true
-        },
-        "n_terms": [
-          6,
-          6
-        ],
-        "sign_violation": [
-          0.0,
-          0.0
-        ],
-        "sign_violation_unconstrained": [
-          0.015625,
-          0.2625
-        ]
-      },
-      {
-        "k": 8,
-        "nmae": 6.995889272765347,
-        "nmae_unconstrained": 7.859816145032639,
-        "flops": 49,
-        "certificate": {
-          "max_spectral_radius": 0.9983892428996487,
-          "all_locally_stable": true,
-          "worst_offset_cm": 0.0,
-          "all_fixed_points_found": true
-        },
-        "n_terms": [
-          8,
-          8
-        ],
-        "sign_violation": [
-          0.0,
-          0.0
-        ],
-        "sign_violation_unconstrained": [
-          0.230625,
-          0.291875
-        ]
-      },
-      {
-        "k": 12,
-        "nmae": 7.2334349270036205,
-        "nmae_unconstrained": 7.36932689433709,
-        "flops": 64,
-        "certificate": {
-          "max_spectral_radius": 0.9983892428951217,
-          "all_locally_stable": true,
-          "worst_offset_cm": 0.0,
-          "all_fixed_points_found": true
-        },
-        "n_terms": [
-          12,
-          12
-        ],
-        "sign_violation": [
-          0.0,
-          0.0
-        ],
-        "sign_violation_unconstrained": [
-          0.2825,
-          0.300625
-        ]
-      },
-      {
-        "k": 16,
-        "nmae": 6.704487311026921,
-        "nmae_unconstrained": 6.998398469216383,
-        "flops": 79,
-        "certificate": {
-          "max_spectral_radius": 0.998389242892589,
-          "all_locally_stable": true,
-          "worst_offset_cm": 0.0,
-          "all_fixed_points_found": true
-        },
-        "n_terms": [
           16,
           16
         ],
@@ -383,17 +149,25 @@
           0.0
         ],
         "sign_violation_unconstrained": [
-          0.285625,
-          0.296875
+          0.096875,
+          0.095
+        ],
+        "cross_sign_violation": [
+          0.3975,
+          0.16125
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.2225,
+          0.1425
         ]
       },
       {
         "k": 24,
-        "nmae": 7.162890284069328,
-        "nmae_unconstrained": 6.79054537521554,
-        "flops": 111,
+        "nmae": 6.997490362532535,
+        "nmae_unconstrained": 6.825470531592388,
+        "flops": 109,
         "certificate": {
-          "max_spectral_radius": 0.9983892429199571,
+          "max_spectral_radius": 0.9983892428998126,
           "all_locally_stable": true,
           "worst_offset_cm": 0.0,
           "all_fixed_points_found": true
@@ -407,17 +181,25 @@
           0.0
         ],
         "sign_violation_unconstrained": [
-          0.28625,
-          0.28625
+          0.10875,
+          0.099375
+        ],
+        "cross_sign_violation": [
+          0.47125,
+          0.204375
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.32625,
+          0.14
         ]
       },
       {
         "k": 32,
-        "nmae": 7.031013569692493,
-        "nmae_unconstrained": 6.658161509612939,
-        "flops": 144,
+        "nmae": 7.134556016363404,
+        "nmae_unconstrained": 6.6383137296139685,
+        "flops": 141,
         "certificate": {
-          "max_spectral_radius": 0.9983892429222126,
+          "max_spectral_radius": 0.9983892429259532,
           "all_locally_stable": true,
           "worst_offset_cm": 0.0,
           "all_fixed_points_found": true
@@ -431,17 +213,25 @@
           0.0
         ],
         "sign_violation_unconstrained": [
-          0.291875,
-          0.306875
+          0.105,
+          0.110625
+        ],
+        "cross_sign_violation": [
+          0.551875,
+          0.216875
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.32,
+          0.13125
         ]
       },
       {
         "k": 48,
-        "nmae": 6.5850832793719505,
-        "nmae_unconstrained": 6.316976938318049,
-        "flops": 209,
+        "nmae": 6.523709166063603,
+        "nmae_unconstrained": 6.186443363853648,
+        "flops": 205,
         "certificate": {
-          "max_spectral_radius": 0.998389242893172,
+          "max_spectral_radius": 0.9983892428976316,
           "all_locally_stable": true,
           "worst_offset_cm": 0.0,
           "all_fixed_points_found": true
@@ -455,17 +245,25 @@
           0.0
         ],
         "sign_violation_unconstrained": [
-          0.288125,
-          0.29625
+          0.101875,
+          0.114375
+        ],
+        "cross_sign_violation": [
+          0.50625,
+          0.244375
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.304375,
+          0.14
         ]
       },
       {
         "k": 64,
-        "nmae": 5.993685205712846,
-        "nmae_unconstrained": 6.095915562865394,
-        "flops": 281,
+        "nmae": 6.330102853215795,
+        "nmae_unconstrained": 6.107601338911986,
+        "flops": 268,
         "certificate": {
-          "max_spectral_radius": 0.9983892428906439,
+          "max_spectral_radius": 0.9983892428986765,
           "all_locally_stable": true,
           "worst_offset_cm": 0.0,
           "all_fixed_points_found": true
@@ -479,17 +277,25 @@
           0.0
         ],
         "sign_violation_unconstrained": [
-          0.293125,
-          0.30625
+          0.09875,
+          0.114375
+        ],
+        "cross_sign_violation": [
+          0.4675,
+          0.264375
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.295625,
+          0.145625
         ]
       },
       {
         "k": 96,
-        "nmae": 5.983323159956316,
-        "nmae_unconstrained": 5.773055335897438,
-        "flops": 431,
+        "nmae": 5.944339589941099,
+        "nmae_unconstrained": 5.887591446632615,
+        "flops": 392,
         "certificate": {
-          "max_spectral_radius": 0.998389242893172,
+          "max_spectral_radius": 0.9983892429222984,
           "all_locally_stable": true,
           "worst_offset_cm": 0.0,
           "all_fixed_points_found": true
@@ -503,17 +309,25 @@
           0.0
         ],
         "sign_violation_unconstrained": [
-          0.283125,
-          0.211875
+          0.089375,
+          0.11125
+        ],
+        "cross_sign_violation": [
+          0.495625,
+          0.250625
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.32,
+          0.150625
         ]
       },
       {
         "k": 144,
-        "nmae": 5.833999294110419,
-        "nmae_unconstrained": 5.64354325041138,
-        "flops": 673,
+        "nmae": 5.859420807289429,
+        "nmae_unconstrained": 5.512794494207643,
+        "flops": 580,
         "certificate": {
-          "max_spectral_radius": 0.9983892428982857,
+          "max_spectral_radius": 0.998389242928462,
           "all_locally_stable": true,
           "worst_offset_cm": 0.0,
           "all_fixed_points_found": true
@@ -523,12 +337,374 @@
           144
         ],
         "sign_violation": [
-          0.008125,
-          0.0125
+          0.00625,
+          0.0
         ],
         "sign_violation_unconstrained": [
-          0.141875,
-          0.2575
+          0.088125,
+          0.104375
+        ],
+        "cross_sign_violation": [
+          0.4675,
+          0.255625
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.326875,
+          0.161875
+        ]
+      }
+    ],
+    "direct_polynomial_curve": [
+      {
+        "k": 4,
+        "nmae": 6.4125581269015415,
+        "nmae_unconstrained": 8.568187693507804,
+        "flops": 30,
+        "certificate": {
+          "max_spectral_radius": 0.9983892429200321,
+          "all_locally_stable": true,
+          "worst_offset_cm": 0.0,
+          "all_fixed_points_found": true
+        },
+        "n_terms": [
+          4,
+          4
+        ],
+        "sign_violation": [
+          0.0,
+          0.0
+        ],
+        "sign_violation_unconstrained": [
+          0.071875,
+          0.07875
+        ],
+        "cross_sign_violation": [
+          0.31625,
+          0.164375
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.351875,
+          0.201875
+        ]
+      },
+      {
+        "k": 6,
+        "nmae": 7.4259789893484625,
+        "nmae_unconstrained": 8.52663194559603,
+        "flops": 42,
+        "certificate": {
+          "max_spectral_radius": 0.9983892428710313,
+          "all_locally_stable": true,
+          "worst_offset_cm": 0.0,
+          "all_fixed_points_found": true
+        },
+        "n_terms": [
+          6,
+          6
+        ],
+        "sign_violation": [
+          0.0,
+          0.0
+        ],
+        "sign_violation_unconstrained": [
+          0.074375,
+          0.085625
+        ],
+        "cross_sign_violation": [
+          0.276875,
+          0.155625
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.318125,
+          0.205
+        ]
+      },
+      {
+        "k": 8,
+        "nmae": 6.829193808325443,
+        "nmae_unconstrained": 7.859816145032639,
+        "flops": 49,
+        "certificate": {
+          "max_spectral_radius": 0.9983892429127524,
+          "all_locally_stable": true,
+          "worst_offset_cm": 0.0,
+          "all_fixed_points_found": true
+        },
+        "n_terms": [
+          8,
+          8
+        ],
+        "sign_violation": [
+          0.0,
+          0.0
+        ],
+        "sign_violation_unconstrained": [
+          0.073125,
+          0.08875
+        ],
+        "cross_sign_violation": [
+          0.335,
+          0.115625
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.27625,
+          0.1725
+        ]
+      },
+      {
+        "k": 12,
+        "nmae": 6.70637166546556,
+        "nmae_unconstrained": 7.36932689433709,
+        "flops": 64,
+        "certificate": {
+          "max_spectral_radius": 0.9983892429269938,
+          "all_locally_stable": true,
+          "worst_offset_cm": 0.0,
+          "all_fixed_points_found": true
+        },
+        "n_terms": [
+          12,
+          12
+        ],
+        "sign_violation": [
+          0.0,
+          0.0
+        ],
+        "sign_violation_unconstrained": [
+          0.09,
+          0.09625
+        ],
+        "cross_sign_violation": [
+          0.400625,
+          0.118125
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.1925,
+          0.14
+        ]
+      },
+      {
+        "k": 16,
+        "nmae": 6.4090340001161366,
+        "nmae_unconstrained": 6.998398469216383,
+        "flops": 79,
+        "certificate": {
+          "max_spectral_radius": 0.9983892428692207,
+          "all_locally_stable": true,
+          "worst_offset_cm": 0.0,
+          "all_fixed_points_found": true
+        },
+        "n_terms": [
+          16,
+          16
+        ],
+        "sign_violation": [
+          0.0,
+          0.0
+        ],
+        "sign_violation_unconstrained": [
+          0.096875,
+          0.094375
+        ],
+        "cross_sign_violation": [
+          0.3975,
+          0.165625
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.2225,
+          0.141875
+        ]
+      },
+      {
+        "k": 24,
+        "nmae": 6.866530681337928,
+        "nmae_unconstrained": 6.79054537521554,
+        "flops": 111,
+        "certificate": {
+          "max_spectral_radius": 0.9983892428733161,
+          "all_locally_stable": true,
+          "worst_offset_cm": 0.0,
+          "all_fixed_points_found": true
+        },
+        "n_terms": [
+          24,
+          24
+        ],
+        "sign_violation": [
+          0.0,
+          0.0
+        ],
+        "sign_violation_unconstrained": [
+          0.090625,
+          0.098125
+        ],
+        "cross_sign_violation": [
+          0.600625,
+          0.200625
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.255,
+          0.14125
+        ]
+      },
+      {
+        "k": 32,
+        "nmae": 6.873921861336119,
+        "nmae_unconstrained": 6.658161509612939,
+        "flops": 144,
+        "certificate": {
+          "max_spectral_radius": 0.9983892428886108,
+          "all_locally_stable": true,
+          "worst_offset_cm": 0.0,
+          "all_fixed_points_found": true
+        },
+        "n_terms": [
+          32,
+          32
+        ],
+        "sign_violation": [
+          0.0,
+          0.0
+        ],
+        "sign_violation_unconstrained": [
+          0.1025,
+          0.11
+        ],
+        "cross_sign_violation": [
+          0.5525,
+          0.266875
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.288125,
+          0.15
+        ]
+      },
+      {
+        "k": 48,
+        "nmae": 6.7041969845015075,
+        "nmae_unconstrained": 6.316976938318049,
+        "flops": 209,
+        "certificate": {
+          "max_spectral_radius": 0.9983892428717536,
+          "all_locally_stable": true,
+          "worst_offset_cm": 0.0,
+          "all_fixed_points_found": true
+        },
+        "n_terms": [
+          48,
+          48
+        ],
+        "sign_violation": [
+          0.0,
+          0.0
+        ],
+        "sign_violation_unconstrained": [
+          0.105625,
+          0.1125
+        ],
+        "cross_sign_violation": [
+          0.50875,
+          0.256875
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.32125,
+          0.148125
+        ]
+      },
+      {
+        "k": 64,
+        "nmae": 6.271136495758732,
+        "nmae_unconstrained": 6.095915562865394,
+        "flops": 281,
+        "certificate": {
+          "max_spectral_radius": 0.9983892428717536,
+          "all_locally_stable": true,
+          "worst_offset_cm": 0.0,
+          "all_fixed_points_found": true
+        },
+        "n_terms": [
+          64,
+          64
+        ],
+        "sign_violation": [
+          0.0,
+          0.0
+        ],
+        "sign_violation_unconstrained": [
+          0.105625,
+          0.11375
+        ],
+        "cross_sign_violation": [
+          0.473125,
+          0.2325
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.279375,
+          0.146875
+        ]
+      },
+      {
+        "k": 96,
+        "nmae": 6.069575816905311,
+        "nmae_unconstrained": 5.773055335897438,
+        "flops": 431,
+        "certificate": {
+          "max_spectral_radius": 0.9983892429216544,
+          "all_locally_stable": true,
+          "worst_offset_cm": 0.0,
+          "all_fixed_points_found": true
+        },
+        "n_terms": [
+          96,
+          96
+        ],
+        "sign_violation": [
+          0.0,
+          0.0
+        ],
+        "sign_violation_unconstrained": [
+          0.110625,
+          0.11
+        ],
+        "cross_sign_violation": [
+          0.474375,
+          0.24125
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.28,
+          0.146875
+        ]
+      },
+      {
+        "k": 144,
+        "nmae": 5.597190827907641,
+        "nmae_unconstrained": 5.64354325041138,
+        "flops": 673,
+        "certificate": {
+          "max_spectral_radius": 0.9983892428943993,
+          "all_locally_stable": true,
+          "worst_offset_cm": 0.0,
+          "all_fixed_points_found": true
+        },
+        "n_terms": [
+          144,
+          144
+        ],
+        "sign_violation": [
+          0.0,
+          0.0
+        ],
+        "sign_violation_unconstrained": [
+          0.099375,
+          0.111875
+        ],
+        "cross_sign_violation": [
+          0.459375,
+          0.255625
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.28125,
+          0.148125
         ]
       }
     ],
@@ -536,11 +712,11 @@
     "kan_support_size": 145,
     "deployed": {
       "k": 4,
-      "nmae": 6.163935149512931,
+      "nmae": 6.4125581269015415,
       "nmae_unconstrained": 8.568187693507804,
       "flops": 30,
       "certificate": {
-        "max_spectral_radius": 0.9983892429197035,
+        "max_spectral_radius": 0.9983892429200321,
         "all_locally_stable": true,
         "worst_offset_cm": 0.0,
         "all_fixed_points_found": true
@@ -554,8 +730,16 @@
         0.0
       ],
       "sign_violation_unconstrained": [
-        0.01375,
-        0.0275
+        0.071875,
+        0.07875
+      ],
+      "cross_sign_violation": [
+        0.31625,
+        0.164375
+      ],
+      "cross_sign_violation_unconstrained": [
+        0.351875,
+        0.201875
       ]
     },
     "selection_rule": {
@@ -666,16 +850,16 @@
     },
     "deployed_coefficients": {
       "pump1": [
-        -0.21033704851815055,
-        0.22209244110098691,
-        -0.6730425428763552,
-        0.6303846878473081
+        -0.020096820147085623,
+        0.20025556785175003,
+        -0.8611369356390289,
+        0.20644700180330355
       ],
       "pump2": [
-        -0.09373603693618729,
-        -0.9053056576503851,
-        0.670829387286309,
-        0.1806389910964004
+        -0.07736846102899098,
+        -0.952116685301041,
+        0.7544085656457705,
+        0.11425658457728
       ]
     }
   },
@@ -683,11 +867,11 @@
     "kan_support_curve": [
       {
         "k": 4,
-        "nmae": 14.141890981915486,
+        "nmae": 11.830830643219079,
         "nmae_unconstrained": 14.141893508886135,
         "flops": 30,
         "certificate": {
-          "max_spectral_radius": 0.9987697430279188,
+          "max_spectral_radius": 0.9987697429700707,
           "all_locally_stable": true,
           "worst_offset_cm": 0.0,
           "all_fixed_points_found": true
@@ -701,17 +885,25 @@
           0.0
         ],
         "sign_violation_unconstrained": [
+          0.00875,
+          0.00625
+        ],
+        "cross_sign_violation": [
           0.0,
           0.0
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.05125,
+          0.013125
         ]
       },
       {
         "k": 6,
-        "nmae": 14.188781271362854,
+        "nmae": 12.190931501880842,
         "nmae_unconstrained": 14.188782780397707,
         "flops": 36,
         "certificate": {
-          "max_spectral_radius": 0.9987697429984385,
+          "max_spectral_radius": 0.9987697429193126,
           "all_locally_stable": true,
           "worst_offset_cm": 0.0,
           "all_fixed_points_found": true
@@ -725,17 +917,25 @@
           0.0
         ],
         "sign_violation_unconstrained": [
+          0.016875,
+          0.0
+        ],
+        "cross_sign_violation": [
           0.0,
           0.0
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.063125,
+          0.01125
         ]
       },
       {
         "k": 8,
-        "nmae": 12.775252471449607,
+        "nmae": 11.032849379206729,
         "nmae_unconstrained": 12.785576088293316,
         "flops": 44,
         "certificate": {
-          "max_spectral_radius": 0.9987697429751579,
+          "max_spectral_radius": 0.99876974298369,
           "all_locally_stable": true,
           "worst_offset_cm": 0.0,
           "all_fixed_points_found": true
@@ -749,17 +949,25 @@
           0.0
         ],
         "sign_violation_unconstrained": [
+          0.019375,
+          0.010625
+        ],
+        "cross_sign_violation": [
           0.0,
-          0.019375
+          0.0
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.04875,
+          0.0225
         ]
       },
       {
         "k": 12,
-        "nmae": 11.45840546243947,
+        "nmae": 11.037402751625978,
         "nmae_unconstrained": 11.61067560188497,
         "flops": 63,
         "certificate": {
-          "max_spectral_radius": 0.9987697430508943,
+          "max_spectral_radius": 0.9987697430002864,
           "all_locally_stable": true,
           "worst_offset_cm": 0.0,
           "all_fixed_points_found": true
@@ -767,6 +975,70 @@
         "n_terms": [
           12,
           12
+        ],
+        "sign_violation": [
+          0.0,
+          0.0
+        ],
+        "sign_violation_unconstrained": [
+          0.006875,
+          0.0025
+        ],
+        "cross_sign_violation": [
+          0.0,
+          0.0
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.065,
+          0.051875
+        ]
+      },
+      {
+        "k": 16,
+        "nmae": 10.779978968389214,
+        "nmae_unconstrained": 11.253350640649499,
+        "flops": 79,
+        "certificate": {
+          "max_spectral_radius": 0.9987697429883232,
+          "all_locally_stable": true,
+          "worst_offset_cm": 0.0,
+          "all_fixed_points_found": true
+        },
+        "n_terms": [
+          16,
+          16
+        ],
+        "sign_violation": [
+          0.0,
+          0.0
+        ],
+        "sign_violation_unconstrained": [
+          0.008125,
+          0.0025
+        ],
+        "cross_sign_violation": [
+          0.0,
+          0.0
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.06125,
+          0.058125
+        ]
+      },
+      {
+        "k": 24,
+        "nmae": 11.32449224995401,
+        "nmae_unconstrained": 10.129860296965099,
+        "flops": 111,
+        "certificate": {
+          "max_spectral_radius": 0.9987697430189441,
+          "all_locally_stable": true,
+          "worst_offset_cm": 0.0,
+          "all_fixed_points_found": true
+        },
+        "n_terms": [
+          24,
+          24
         ],
         "sign_violation": [
           0.0,
@@ -774,64 +1046,24 @@
         ],
         "sign_violation_unconstrained": [
           0.014375,
-          0.02125
-        ]
-      },
-      {
-        "k": 16,
-        "nmae": 11.18322757079377,
-        "nmae_unconstrained": 11.253350640649499,
-        "flops": 79,
-        "certificate": {
-          "max_spectral_radius": 0.998769742954312,
-          "all_locally_stable": true,
-          "worst_offset_cm": 0.0,
-          "all_fixed_points_found": true
-        },
-        "n_terms": [
-          16,
-          16
+          0.03875
         ],
-        "sign_violation": [
+        "cross_sign_violation": [
           0.0,
           0.0
         ],
-        "sign_violation_unconstrained": [
-          0.0375,
-          0.0
-        ]
-      },
-      {
-        "k": 24,
-        "nmae": 10.438758798320327,
-        "nmae_unconstrained": 10.129860296965099,
-        "flops": 111,
-        "certificate": {
-          "max_spectral_radius": 0.9987697430394621,
-          "all_locally_stable": true,
-          "worst_offset_cm": 0.0,
-          "all_fixed_points_found": true
-        },
-        "n_terms": [
-          24,
-          24
-        ],
-        "sign_violation": [
-          0.0,
-          0.0
-        ],
-        "sign_violation_unconstrained": [
-          0.145,
-          0.22375
+        "cross_sign_violation_unconstrained": [
+          0.1225,
+          0.025
         ]
       },
       {
         "k": 32,
-        "nmae": 9.995312102694571,
+        "nmae": 10.647519330027226,
         "nmae_unconstrained": 9.23866464941156,
         "flops": 143,
         "certificate": {
-          "max_spectral_radius": 0.9987697430246549,
+          "max_spectral_radius": 0.998769742984967,
           "all_locally_stable": true,
           "worst_offset_cm": 0.0,
           "all_fixed_points_found": true
@@ -845,17 +1077,25 @@
           0.0
         ],
         "sign_violation_unconstrained": [
-          0.254375,
-          0.159375
+          0.0175,
+          0.023125
+        ],
+        "cross_sign_violation": [
+          0.0,
+          0.0
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.0975,
+          0.061875
         ]
       },
       {
         "k": 48,
-        "nmae": 8.584935688520671,
+        "nmae": 9.628714712601262,
         "nmae_unconstrained": 8.0422849817416,
         "flops": 203,
         "certificate": {
-          "max_spectral_radius": 0.9987697429598065,
+          "max_spectral_radius": 0.9987697430143566,
           "all_locally_stable": true,
           "worst_offset_cm": 0.0,
           "all_fixed_points_found": true
@@ -869,17 +1109,25 @@
           0.0
         ],
         "sign_violation_unconstrained": [
-          0.241875,
-          0.198125
+          0.02625,
+          0.023125
+        ],
+        "cross_sign_violation": [
+          0.0,
+          0.0
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.08875,
+          0.05
         ]
       },
       {
         "k": 64,
-        "nmae": 8.448838348409474,
+        "nmae": 9.42815312610351,
         "nmae_unconstrained": 8.027545620750344,
         "flops": 266,
         "certificate": {
-          "max_spectral_radius": 0.9987697429984946,
+          "max_spectral_radius": 0.9987697429854819,
           "all_locally_stable": true,
           "worst_offset_cm": 0.0,
           "all_fixed_points_found": true
@@ -893,17 +1141,25 @@
           0.0
         ],
         "sign_violation_unconstrained": [
-          0.24,
-          0.199375
+          0.029375,
+          0.02
+        ],
+        "cross_sign_violation": [
+          0.0,
+          0.0
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.083125,
+          0.04875
         ]
       },
       {
         "k": 96,
-        "nmae": 8.844536716291799,
+        "nmae": 9.161054687794167,
         "nmae_unconstrained": 8.978236399449253,
         "flops": 394,
         "certificate": {
-          "max_spectral_radius": 0.9987697430919168,
+          "max_spectral_radius": 0.9987697430002864,
           "all_locally_stable": true,
           "worst_offset_cm": 0.0,
           "all_fixed_points_found": true
@@ -917,17 +1173,25 @@
           0.0
         ],
         "sign_violation_unconstrained": [
-          0.30125,
-          0.15375
+          0.033125,
+          0.0425
+        ],
+        "cross_sign_violation": [
+          0.0,
+          0.0
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.07125,
+          0.0375
         ]
       },
       {
         "k": 144,
-        "nmae": 8.772569317118856,
+        "nmae": 9.770911242027402,
         "nmae_unconstrained": 9.11095402240059,
         "flops": 580,
         "certificate": {
-          "max_spectral_radius": 0.9987697429822169,
+          "max_spectral_radius": 0.9987697429981113,
           "all_locally_stable": true,
           "worst_offset_cm": 0.0,
           "all_fixed_points_found": true
@@ -937,23 +1201,31 @@
           144
         ],
         "sign_violation": [
-          0.003125,
-          0.00375
+          0.00625,
+          0.005
         ],
         "sign_violation_unconstrained": [
-          0.26,
-          0.225
+          0.029375,
+          0.031875
+        ],
+        "cross_sign_violation": [
+          0.0075,
+          0.004375
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.078125,
+          0.0725
         ]
       }
     ],
     "direct_polynomial_curve": [
       {
         "k": 4,
-        "nmae": 14.141890981915486,
+        "nmae": 11.830830643219079,
         "nmae_unconstrained": 14.141893508886135,
         "flops": 30,
         "certificate": {
-          "max_spectral_radius": 0.9987697430279188,
+          "max_spectral_radius": 0.9987697429700707,
           "all_locally_stable": true,
           "worst_offset_cm": 0.0,
           "all_fixed_points_found": true
@@ -967,17 +1239,25 @@
           0.0
         ],
         "sign_violation_unconstrained": [
+          0.00875,
+          0.00625
+        ],
+        "cross_sign_violation": [
           0.0,
           0.0
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.05125,
+          0.013125
         ]
       },
       {
         "k": 6,
-        "nmae": 14.188781271362854,
+        "nmae": 12.190931501880842,
         "nmae_unconstrained": 14.188782780397707,
         "flops": 36,
         "certificate": {
-          "max_spectral_radius": 0.9987697429984385,
+          "max_spectral_radius": 0.9987697429193126,
           "all_locally_stable": true,
           "worst_offset_cm": 0.0,
           "all_fixed_points_found": true
@@ -991,17 +1271,25 @@
           0.0
         ],
         "sign_violation_unconstrained": [
+          0.016875,
+          0.0
+        ],
+        "cross_sign_violation": [
           0.0,
           0.0
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.063125,
+          0.01125
         ]
       },
       {
         "k": 8,
-        "nmae": 12.775252471449607,
+        "nmae": 11.032849379206729,
         "nmae_unconstrained": 12.785576088293316,
         "flops": 44,
         "certificate": {
-          "max_spectral_radius": 0.9987697429751579,
+          "max_spectral_radius": 0.99876974298369,
           "all_locally_stable": true,
           "worst_offset_cm": 0.0,
           "all_fixed_points_found": true
@@ -1015,17 +1303,25 @@
           0.0
         ],
         "sign_violation_unconstrained": [
+          0.019375,
+          0.010625
+        ],
+        "cross_sign_violation": [
           0.0,
-          0.019375
+          0.0
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.04875,
+          0.0225
         ]
       },
       {
         "k": 12,
-        "nmae": 11.279123998216178,
+        "nmae": 11.028187835963344,
         "nmae_unconstrained": 11.360113121839605,
         "flops": 65,
         "certificate": {
-          "max_spectral_radius": 0.9987697429984385,
+          "max_spectral_radius": 0.998769742971895,
           "all_locally_stable": true,
           "worst_offset_cm": 0.0,
           "all_fixed_points_found": true
@@ -1039,17 +1335,25 @@
           0.0
         ],
         "sign_violation_unconstrained": [
+          0.009375,
+          0.0025
+        ],
+        "cross_sign_violation": [
           0.0,
-          0.02125
+          0.0
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.08375,
+          0.051875
         ]
       },
       {
         "k": 16,
-        "nmae": 11.157950214444071,
+        "nmae": 11.043507207602332,
         "nmae_unconstrained": 11.205095202941044,
         "flops": 78,
         "certificate": {
-          "max_spectral_radius": 0.9987697429984946,
+          "max_spectral_radius": 0.9987697429543682,
           "all_locally_stable": true,
           "worst_offset_cm": 0.0,
           "all_fixed_points_found": true
@@ -1063,17 +1367,25 @@
           0.0
         ],
         "sign_violation_unconstrained": [
-          0.0225,
+          0.00625,
+          0.0025
+        ],
+        "cross_sign_violation": [
+          0.0,
           0.0
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.053125,
+          0.058125
         ]
       },
       {
         "k": 24,
-        "nmae": 9.647697887389164,
+        "nmae": 10.86499813465438,
         "nmae_unconstrained": 9.665469322803283,
         "flops": 113,
         "certificate": {
-          "max_spectral_radius": 0.9987697429362976,
+          "max_spectral_radius": 0.9987697430900925,
           "all_locally_stable": true,
           "worst_offset_cm": 0.0,
           "all_fixed_points_found": true
@@ -1087,17 +1399,25 @@
           0.0
         ],
         "sign_violation_unconstrained": [
-          0.12125,
-          0.058125
+          0.00875,
+          0.010625
+        ],
+        "cross_sign_violation": [
+          0.0,
+          0.0
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.13625,
+          0.055625
         ]
       },
       {
         "k": 32,
-        "nmae": 8.698082243375689,
+        "nmae": 9.280157695392104,
         "nmae_unconstrained": 8.243259561714105,
         "flops": 145,
         "certificate": {
-          "max_spectral_radius": 0.9987697429952322,
+          "max_spectral_radius": 0.9987697430143566,
           "all_locally_stable": true,
           "worst_offset_cm": 0.0,
           "all_fixed_points_found": true
@@ -1111,17 +1431,25 @@
           0.0
         ],
         "sign_violation_unconstrained": [
-          0.21,
-          0.1
+          0.03125,
+          0.01875
+        ],
+        "cross_sign_violation": [
+          0.0,
+          0.0
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.044375,
+          0.040625
         ]
       },
       {
         "k": 48,
-        "nmae": 8.656810970002239,
+        "nmae": 8.811298985856977,
         "nmae_unconstrained": 8.345344895174382,
         "flops": 210,
         "certificate": {
-          "max_spectral_radius": 0.9987697429984946,
+          "max_spectral_radius": 0.9987697430247111,
           "all_locally_stable": true,
           "worst_offset_cm": 0.0,
           "all_fixed_points_found": true
@@ -1135,17 +1463,25 @@
           0.0
         ],
         "sign_violation_unconstrained": [
-          0.2125,
-          0.18625
+          0.02625,
+          0.025
+        ],
+        "cross_sign_violation": [
+          0.0,
+          0.0
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.066875,
+          0.048125
         ]
       },
       {
         "k": 64,
-        "nmae": 8.454271783498694,
+        "nmae": 8.667947972262304,
         "nmae_unconstrained": 8.044746981627059,
         "flops": 281,
         "certificate": {
-          "max_spectral_radius": 0.9987697429543682,
+          "max_spectral_radius": 0.9987697430002864,
           "all_locally_stable": true,
           "worst_offset_cm": 0.0,
           "all_fixed_points_found": true
@@ -1159,17 +1495,25 @@
           0.0
         ],
         "sign_violation_unconstrained": [
-          0.235,
-          0.150625
+          0.02375,
+          0.025
+        ],
+        "cross_sign_violation": [
+          0.0,
+          0.0
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.074375,
+          0.0425
         ]
       },
       {
         "k": 96,
-        "nmae": 7.993996059159474,
+        "nmae": 8.390969074214302,
         "nmae_unconstrained": 8.196692203698447,
         "flops": 424,
         "certificate": {
-          "max_spectral_radius": 0.9987697431022386,
+          "max_spectral_radius": 0.9987697430143011,
           "all_locally_stable": true,
           "worst_offset_cm": 0.0,
           "all_fixed_points_found": true
@@ -1183,17 +1527,25 @@
           0.0
         ],
         "sign_violation_unconstrained": [
-          0.22875,
-          0.2225
+          0.024375,
+          0.034375
+        ],
+        "cross_sign_violation": [
+          0.0,
+          0.0
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.07,
+          0.05125
         ]
       },
       {
         "k": 144,
-        "nmae": 8.54180546992305,
+        "nmae": 9.002617644985405,
         "nmae_unconstrained": 8.402501112164398,
         "flops": 665,
         "certificate": {
-          "max_spectral_radius": 0.9987697429783956,
+          "max_spectral_radius": 0.9987697429707392,
           "all_locally_stable": true,
           "worst_offset_cm": 0.0,
           "all_fixed_points_found": true
@@ -1207,8 +1559,16 @@
           0.0
         ],
         "sign_violation_unconstrained": [
-          0.278125,
-          0.21875
+          0.025625,
+          0.046875
+        ],
+        "cross_sign_violation": [
+          0.0,
+          0.0
+        ],
+        "cross_sign_violation_unconstrained": [
+          0.116875,
+          0.048125
         ]
       }
     ],
@@ -1216,11 +1576,11 @@
     "kan_support_size": 145,
     "deployed": {
       "k": 48,
-      "nmae": 8.584935688520671,
+      "nmae": 9.628714712601262,
       "nmae_unconstrained": 8.0422849817416,
       "flops": 203,
       "certificate": {
-        "max_spectral_radius": 0.9987697429598065,
+        "max_spectral_radius": 0.9987697430143566,
         "all_locally_stable": true,
         "worst_offset_cm": 0.0,
         "all_fixed_points_found": true
@@ -1234,8 +1594,16 @@
         0.0
       ],
       "sign_violation_unconstrained": [
-        0.241875,
-        0.198125
+        0.02625,
+        0.023125
+      ],
+      "cross_sign_violation": [
+        0.0,
+        0.0
+      ],
+      "cross_sign_violation_unconstrained": [
+        0.08875,
+        0.05
       ]
     },
     "selection_rule": {
@@ -2226,104 +2594,104 @@
     },
     "deployed_coefficients": {
       "pump1": [
-        0.4139733904192066,
-        -0.4600929340835174,
-        1.1510176722175118,
-        -0.44488871899277316,
-        -1.0906438607136542,
-        1.3485537886009957,
-        0.7575291804596764,
-        -0.7764764063227345,
-        -2.3095645480182485,
-        0.1438837315967461,
-        0.7965703499338963,
-        -1.5741061912640453,
-        2.8413511415036488,
-        -2.446947189682925,
-        3.3968104606832297,
-        0.984094926143855,
-        0.09230185843657146,
-        -1.0030702083002476,
-        0.5957715662267535,
-        -5.167358012531183,
-        0.0632110066207455,
-        -0.6460489070095325,
-        -0.15423697720663593,
-        -0.9212760298729165,
-        1.154944961591568,
-        0.8237316162003119,
-        -0.9459989246042937,
-        -1.8389267394898403,
-        -1.739751514652906,
-        2.3833911327396975,
-        1.01045834085629,
-        0.32503493258562427,
-        0.6483689973430407,
-        -3.273639017831623,
-        0.2656976372813714,
-        3.2188925864114273,
-        -0.3808527601407832,
-        3.111127569653306,
-        0.12678632690976843,
-        0.3540067112331583,
-        -0.45438884553005227,
-        1.9204748749402434,
-        -0.01484991348444399,
-        1.521963980827731,
-        -2.104992920466001,
-        0.40672881742758665,
-        -2.61685269398442,
-        0.6384743654221132
+        0.336387380363197,
+        -0.7271653371192697,
+        1.9462123176108403,
+        -2.2339382956575613,
+        -0.28799232183495904,
+        1.9482623819250982,
+        1.4880508650537743,
+        -1.380472934890443,
+        -0.9400297337214941,
+        -0.25736999879120054,
+        -0.20517631854318605,
+        -0.25313001431897303,
+        2.1790042080004466,
+        -0.5860972583600434,
+        0.8006028985421761,
+        -0.646282706305307,
+        -1.3089165318537899,
+        -2.6608849152142744,
+        0.8573213471151712,
+        -1.3649978335875823,
+        0.19676025945688833,
+        -0.32513135914134933,
+        -1.1286254218483192,
+        -1.0276861450481682,
+        0.4357385448872218,
+        -0.44952861162470137,
+        -0.25969740483006026,
+        -1.864047669663647,
+        -0.6038635751895209,
+        1.2851515030578817,
+        0.9904806173985902,
+        -1.4771929089303593,
+        0.1490008580789331,
+        -0.6925501711258013,
+        -0.32099828791938223,
+        1.7824960386618995,
+        0.6284093234394027,
+        0.6847086824493875,
+        -1.1002604056931187,
+        0.4786378957628195,
+        0.5585776939129531,
+        0.10821192967863366,
+        0.28474342462385893,
+        1.4273642362397694,
+        -0.6181472503997053,
+        -1.3370127763955957,
+        -0.06688564826194646,
+        0.39813031759673734
       ],
       "pump2": [
-        0.3447208819169115,
-        -0.708576187510938,
-        0.4639741022343051,
-        1.6598580615215293,
-        -1.0793041096215414,
-        0.6476222697984919,
-        -0.4531670283256803,
-        0.9248851511225297,
-        -1.168385999270334,
-        1.2701828497993248,
-        -2.138968393367668,
-        0.07204629317677097,
-        -1.1422505523222468,
-        -0.31840352925566934,
-        -0.2267387306418171,
-        -0.16615607292572548,
-        -0.5349502682408982,
-        -2.3156771396422346,
-        1.9646105256803368,
-        -4.9758857606605815,
-        2.947470756074778,
-        -0.29328679025115123,
-        -1.0671392303006604,
-        0.376276903297959,
-        -0.12828871790580829,
-        1.1715601639203366,
-        1.2250725031857426,
-        1.079871275346413,
-        -0.7173141130817563,
-        -1.4527651754164073,
-        3.6819841312824084,
-        -0.3317180154100966,
-        0.6460846330633436,
-        6.7734160758778295,
-        -0.2483631916116182,
-        0.6760127953735985,
-        0.7216606582504488,
-        -1.761931347380432,
-        -0.3653151018408286,
-        -1.7010473979384195,
-        0.0909149453302779,
-        -3.2379861770425347,
-        1.8327229299281542,
-        -0.9578965095564212,
-        3.3847123509592443,
-        3.3130933845727464,
-        -0.829175340886008,
-        -0.28095586050618726
+        -0.16262558357093415,
+        -0.8102697377533673,
+        0.8097237488535317,
+        2.1287127168180366,
+        -1.3294525123489114,
+        1.1015950663481935,
+        -1.226185812824117,
+        0.20444320672905833,
+        -2.5344363116941486,
+        0.566202685509279,
+        -3.3213710449753706,
+        0.9292674647443332,
+        -3.186801302493127,
+        -0.9547433725316125,
+        0.09975292771844348,
+        -0.005671071558291028,
+        -0.5840111422983958,
+        -0.2780610698892186,
+        1.4563773880940614,
+        -1.1692174286446557,
+        -1.19600186632035,
+        -0.563560149757927,
+        -2.092441542335176,
+        0.6098639271487244,
+        0.8291329368049459,
+        1.9384713908302387,
+        1.9939198400470295,
+        0.22011347031208836,
+        -3.49192600383851,
+        -0.7791782548763245,
+        1.0824991627528073,
+        0.13673800463735347,
+        0.4771762668972285,
+        2.883451808141407,
+        -1.5842242201071204,
+        0.8095878779745013,
+        -0.33848588127812046,
+        -0.4244942966794233,
+        -0.41971244046485984,
+        0.6918547261177667,
+        0.022012580598404337,
+        -1.0062761181056614,
+        -0.6789816879812656,
+        -0.31983551263805426,
+        0.5260033809164448,
+        2.292890508716878,
+        0.7748682100691506,
+        1.083201562812091
       ]
     }
   }

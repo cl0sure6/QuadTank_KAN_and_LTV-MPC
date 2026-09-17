@@ -1,0 +1,171 @@
+{
+  "config": {
+    "n_samples": 300,
+    "h_mpc_cm": 0.1,
+    "seed": 20260917,
+    "coordinates": "x held fixed, r_i perturbed"
+  },
+  "gate_region": {
+    "switch_at_norm_e_cm": 5.0,
+    "total_samples": 149200,
+    "pct_in_quadratic_branch": 96.46,
+    "switching_surface_crossings": 50,
+    "per_scenario": {
+      "S1": {
+        "samples": 19200,
+        "pct_in_quadratic_branch": 100.0,
+        "crossings": 0
+      },
+      "S2": {
+        "samples": 38400,
+        "pct_in_quadratic_branch": 86.25,
+        "crossings": 50
+      },
+      "S3": {
+        "samples": 64000,
+        "pct_in_quadratic_branch": 100.0,
+        "crossings": 0
+      },
+      "S4": {
+        "samples": 25600,
+        "pct_in_quadratic_branch": 100.0,
+        "crossings": 0
+      },
+      "S5": {
+        "samples": 2000,
+        "pct_in_quadratic_branch": 100.0,
+        "crossings": 0
+      }
+    }
+  },
+  "MP": {
+    "deployed_law": {
+      "du1_de1": {
+        "min": 0.8531,
+        "median": 1.6501,
+        "max": 1.8085,
+        "frac_nonneg": 1.0,
+        "n": 300
+      },
+      "du1_de2": {
+        "min": -0.1404,
+        "median": 0.0384,
+        "max": 0.4578,
+        "frac_nonneg": 0.8067,
+        "n": 300
+      },
+      "du2_de1": {
+        "min": -0.286,
+        "median": 0.0747,
+        "max": 0.4255,
+        "frac_nonneg": 0.81,
+        "n": 300
+      },
+      "du2_de2": {
+        "min": 1.0105,
+        "median": 1.627,
+        "max": 1.7758,
+        "frac_nonneg": 1.0,
+        "n": 300
+      }
+    },
+    "ltv_mpc_teacher": {
+      "du1_de1": {
+        "min": 2.8632,
+        "median": 2.9531,
+        "max": 3.2817,
+        "frac_nonneg": 1.0,
+        "n": 300
+      },
+      "du1_de2": {
+        "min": -0.0803,
+        "median": 0.0263,
+        "max": 0.2959,
+        "frac_nonneg": 0.9967,
+        "n": 300
+      },
+      "du2_de1": {
+        "min": -0.1359,
+        "median": 0.0057,
+        "max": 0.5075,
+        "frac_nonneg": 0.67,
+        "n": 300
+      },
+      "du2_de2": {
+        "min": 3.5678,
+        "median": 3.8028,
+        "max": 4.4237,
+        "frac_nonneg": 1.0,
+        "n": 300
+      }
+    },
+    "teacher_cross_changes_sign": true,
+    "samples_rejected_saturated_or_failed": 1214,
+    "samples_drawn": 1514
+  },
+  "NMP": {
+    "deployed_law": {
+      "du1_de1": {
+        "min": 0.6416,
+        "median": 1.0667,
+        "max": 1.587,
+        "frac_nonneg": 1.0,
+        "n": 300
+      },
+      "du1_de2": {
+        "min": 0.0288,
+        "median": 0.8635,
+        "max": 1.2603,
+        "frac_nonneg": 1.0,
+        "n": 300
+      },
+      "du2_de1": {
+        "min": 0.5194,
+        "median": 0.9367,
+        "max": 1.3879,
+        "frac_nonneg": 1.0,
+        "n": 300
+      },
+      "du2_de2": {
+        "min": 0.5248,
+        "median": 0.7017,
+        "max": 1.3982,
+        "frac_nonneg": 1.0,
+        "n": 300
+      }
+    },
+    "ltv_mpc_teacher": {
+      "du1_de1": {
+        "min": 1.1644,
+        "median": 2.0886,
+        "max": 2.6991,
+        "frac_nonneg": 1.0,
+        "n": 300
+      },
+      "du1_de2": {
+        "min": 2.7486,
+        "median": 3.3084,
+        "max": 4.2026,
+        "frac_nonneg": 1.0,
+        "n": 300
+      },
+      "du2_de1": {
+        "min": 2.9506,
+        "median": 3.5619,
+        "max": 4.6828,
+        "frac_nonneg": 1.0,
+        "n": 300
+      },
+      "du2_de2": {
+        "min": -0.5415,
+        "median": 1.0145,
+        "max": 1.9809,
+        "frac_nonneg": 0.96,
+        "n": 300
+      }
+    },
+    "teacher_cross_changes_sign": false,
+    "samples_rejected_saturated_or_failed": 765,
+    "samples_drawn": 1065
+  }
+}

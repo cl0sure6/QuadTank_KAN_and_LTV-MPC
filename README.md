@@ -16,11 +16,14 @@ scripts in [`QuadTank_Project/revision/`](QuadTank_Project/revision). Start ther
 The deployed controller is
 
 ```
-u = sat[ u_eq(r)  +  K e  +  w(e) * U_max * f(phi(x, r)) ]
-     feed-forward   LQR core   learned correction
+u = sat[ u_eq(r)  +  K e  +  g(x) * w(e) * U_max * f(phi(x, r)) ]
+     feed-forward   LQR core        learned correction
 ```
 
-with a gate `w(e) = min(||e||^2 / s^2, 1)` that vanishes quadratically at the set-point.
+with a gate `w(e) = min(||e||^2 / s^2, 1)` that vanishes quadratically at the set-point,
+and a level fade `g(x)` that hands authority back to the LQR core as any tank approaches
+its 20 cm limit. Both multiply the learned term only, so the structural properties below
+hold for any learned `f` and any bounded `g`.
 
 | Finding | Evidence |
 |---|---|
@@ -30,13 +33,14 @@ with a gate `w(e) = min(||e||^2 / s^2, 1)` that vanishes quadratically at the se
 | KAN support selection is **not measurably better** than direct sparse regression | Across 11 term budgets × 2 regimes the two curves sit within a few tenths of a percentage point of each other, on every one of 5 training seeds |
 | The benchmark **cannot justify distillation** | With a horizon that spans the inverse response the MPC beats a well-tuned gain-scheduled LQR by only 7–9 %, so there is little for any approximator to lose |
 
-Deployed law: **4 terms/pump (MP, 30 multiply–accumulates, 6.41 % nMAE)** and
-**48 terms/pump (NMP, 203, 9.63 %)**, certified locally exponentially stable
+Deployed law: **4 terms/pump (MP, 38 multiply–accumulates, 6.40 % nMAE)** and
+**48 terms/pump (NMP, 211, 9.60 %)**, certified locally exponentially stable
 (ρ ≤ 0.9988) at every set-point tested, 96.5–100 % stable under ±20 % perturbation
 of valve ratios and pump gains and 95–97 % with outlet areas, actuator delay and
-measurement noise perturbed as well. It is also the only one of eight approximants
-of the same policy that overflows a tank on an aggressive fill inside its training
-envelope — reported as a limitation, not smoothed over.
+measurement noise perturbed as well. Driven against its level limit, it stays clear
+inside its training envelope — because of the level fade, added after the law was found
+overflowing there — and overflows outside it, as does every controller in the comparison
+except the online MPC. That last result is reported as a limitation, not smoothed over.
 
 ### Two benchmark properties the design turns on
 
@@ -126,6 +130,7 @@ pip install -r ../../requirements.txt
 python s00_horizon_study.py        # ~2 min   teacher's prediction horizon, transmission zeros
 python s01_generate_dataset.py     # ~7 min   datasets, both regimes
 python s02_train_models.py         # ~20 min  KAN, MLP, DeepONet, polynomial baselines
+python s02c_reevaluate.py          # <1 min   re-score stored models under the current skeleton
 python s02b_sparsify.py            # ~10 min  term-budget sweep, certified selection
 python s03_signflip_analysis.py    # ~2 min   root cause of the sign anomaly
 python s04_stability.py            # ~12 min  certificate, ROA, Monte-Carlo, constraints

@@ -9,6 +9,7 @@ in this directory. Run them in order from here; each writes into `data/`, `model
 python s00_horizon_study.py        # ~2 min   settles the teacher's prediction horizon
 python s01_generate_dataset.py     # ~7 min   distillation datasets, both regimes
 python s02_train_models.py         # ~20 min  KAN, MLP, DeepONet, polynomial baselines
+python s02c_reevaluate.py          # <1 min   re-score stored models under the current skeleton
 python s02b_sparsify.py            # ~10 min  term-budget sweep + certified selection
 python s03_signflip_analysis.py    # ~2 min   root cause of the sign anomaly
 python s04_stability.py            # ~12 min  certificate, ROA, Monte-Carlo, constraints
@@ -42,12 +43,16 @@ away from the deployed `qtlib.DT_PRED = 4.0 s`.
 ## The controller
 
 ```
-u = sat[ u_eq(r)  +  K e  +  w(e) · U_max · f(φ(x, r)) ],   w(e) = min(‖e‖²/s², 1)
+u = sat[ u_eq(r)  +  K e  +  g(x) · w(e) · U_max · f(φ(x, r)) ]
+
+w(e) = min(‖e‖²/s², 1)
+g(x) = clip((H_max − max_i x_i) / (H_max − H_on), 0, 1),   H_on = 17 cm
 ```
 
 * `u_eq(r)` — the exact steady-state input, two square roots and four multiply–adds
 * `K` — a deliberately detuned LQR gain (`R_CORE = 10·I`), of order 1 V/cm
 * `w(e)` — a gate vanishing quadratically at the set-point
+* `g(x)` — a level fade returning authority to the core as any tank nears its limit
 
 Because `w` **and its gradient** vanish at every reachable set-point, two properties
 hold *for any learned `f` whatsoever*:
@@ -59,6 +64,11 @@ hold *for any learned `f` whatsoever*:
 
 `s04b_invariance.py` checks this by substituting random coefficients (σ up to 100) for
 the trained read-out: the spectral radius moves by less than 1e-10.
+
+Multiplying by `g` costs nothing here. The argument above uses no property of the learned
+term except that `w` and its gradient vanish at the set-point, so it survives *any*
+bounded factor. And because `H_on` lies above every equilibrium level reachable from the
+training reference box, `g ≡ 1` over the whole region the certificate covers.
 
 ## Design decisions worth knowing
 
@@ -110,6 +120,15 @@ the trained read-out: the spectral radius moves by less than 1e-10.
   none. Every reachable equilibrium is interior to the box, so (P1) and (P2) are
   unaffected.
 
+* **Clipping keeps the read-out bounded but also freezes it, which is why the fade
+  exists.** On an aggressive fill `s10` found the frozen correction holding +13.6 V while
+  the LQR core had already reached −8.2 V to shut the pump, and the tank overflowed —
+  inside the training envelope, the only one of eight approximants to do so. `g(x)`
+  removes that. The coefficients are nonetheless fitted as though `g ≡ 1`: folding the
+  fade into the fit would let the learned term grow to compensate for it near the limit,
+  which is the behaviour it exists to suppress. The shape constraint is posed at `g = 1`
+  for the same reason, and that is the conservative case (see `symbolic.total_shape_rows`).
+
 * **`s02b` is idempotent**: it re-derives the KAN support from the stored symbolic
   formulas rather than from its own previous output.
 
@@ -120,7 +139,7 @@ the trained read-out: the spectral radius moves by less than 1e-10.
 | spline KAN → MPC policy | 2.43 % | 4.37 % |
 | after `auto_symbolic` | 7.78 % | 11.24 % |
 | after convex refit | 5.51 % | 9.11 % |
-| deployed law | 6.41 % (4 terms, 30 MACs) | 9.63 % (48 terms, 203 MACs) |
+| deployed law | 6.40 % (4 terms, 38 MACs) | 9.60 % (48 terms, 211 MACs) |
 | spectral radius / ROA / Monte-Carlo stable | 0.9984 / 100 % / 96.5 % | 0.9988 / 85 % / 100 % |
 | negative-feedback violation, unconstrained → constrained | 11.4 % → 0.6 % | 4.2 % → 0.6 % |
 

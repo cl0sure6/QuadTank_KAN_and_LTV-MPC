@@ -136,9 +136,9 @@ training reference box, `g ≡ 1` over the whole region the certificate covers.
 
 | | MP | NMP |
 |---|---|---|
-| spline KAN → MPC policy | 2.43 % | 4.37 % |
-| after `auto_symbolic` | 7.78 % | 11.24 % |
-| after convex refit | 5.51 % | 9.11 % |
+| spline KAN → MPC policy | 2.39 % | 4.60 % |
+| after `auto_symbolic` | 7.75 % | 11.23 % |
+| after convex refit | 5.44 % | 9.00 % |
 | deployed law | 6.40 % (4 terms, 38 MACs) | 9.60 % (48 terms, 211 MACs) |
 | spectral radius / ROA / Monte-Carlo stable | 0.9984 / 100 % / 96.5 % | 0.9988 / 85 % / 100 % |
 | negative-feedback violation, unconstrained → constrained | 11.4 % → 0.6 % | 4.2 % → 0.6 % |
@@ -149,7 +149,7 @@ box before scoring.
 Two results are negative and are reported as such in the paper: the KAN-selected support
 is not measurably better than one chosen directly by sparse regression at any term
 budget or on any of five training seeds, and on this benchmark the MPC beats a well-tuned gain-scheduled LQR
-by only 7–9 %, so the plant cannot demonstrate the value of approximating an optimiser.
+by only 6–9 %, so the plant cannot demonstrate the value of approximating an optimiser.
 
 ## Scope
 

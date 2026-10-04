@@ -120,6 +120,36 @@ corrected on `master`:
 None of these changes a conclusion. They are recorded here so that anyone comparing the
 released code against the submitted PDF can see precisely what differs and why.
 
+### Revision (JPROCONT-D-26-00790R1)
+
+The revised manuscript was submitted on 4 October 2026. The tag
+[`submitted-jpc-r1-2026-10-04`](https://github.com/cl0sure6/QuadTank_KAN_and_LTV-MPC/tree/submitted-jpc-r1-2026-10-04)
+marks the corresponding state, and unlike the first tag it **is** a reproduction target:
+running the stages at that commit regenerates every number in the revised PDF, all of
+them produced by a single pass of the pipeline. Relative to the first submission:
+
+* **Level fade.** `policyform.py` multiplies the learned term by `g(x)`, which hands
+  authority back to the LQR core as a tank approaches its limit. It was added after
+  `s10` found the deployed law overflowing a tank inside its own training envelope. The
+  structural properties (P1)/(P2) are unchanged and the coefficients are bit-identical;
+  the operation count rises from 30 to 38 (MP) and 203 to 211 (NMP).
+* **Cross-channel shape constraints** in the non-minimum-phase regime, where `s04c`
+  shows the teacher's cross gains are large and sign-definite. They are left free in the
+  minimum-phase regime, where they are neither.
+* **Realizable constraint sampling.** `symbolic.constraint_points` draws `(x, r)` pairs
+  with `r` an exact equilibrium. The previous independent draw implied references
+  outside the tank for 33.9 % of points.
+* **New stages.** `s04c` (own- versus cross-channel derivatives, law versus teacher),
+  `s09` (five training seeds: the deployed law is identical on all of them), `s10`
+  (state constraint made active; robustness widened to outlet areas, actuator delay and
+  measurement noise) and `s02c` (re-scores stored models when the policy skeleton
+  changes, without retraining).
+
+One correction to the commit history, since commit messages are public: the message of
+`f4542c5` states that KAN training is not reproducible at a fixed seed. That claim rests
+on a measurement taken under concurrent load and was withdrawn in `7e5a04e`; on an idle
+machine the seed-42 retrain reproduces the baseline to the precision of the result files.
+
 ---
 
 ## Reproducing

@@ -121,11 +121,13 @@ training reference box, `g ≡ 1` over the whole region the certificate covers.
   counts quoted in different places cannot disagree. (Stage 9 once counted every tie as
   a win for the direct support.)
 
-* **Features are clipped to the training box** before the polynomial is evaluated. A
-  degree-4 polynomial extrapolates catastrophically outside the region it was fitted on;
-  without this guard the law overflowed a tank in 6 % of randomised tasks, with it in
-  none. Every reachable equilibrium is interior to the box, so (P1) and (P2) are
-  unaffected.
+* **Features are clipped to the training box** before the polynomial is evaluated, so a
+  degree-4 polynomial is never evaluated where it was not fitted. Every reachable
+  equilibrium is interior to the box, so (P1) and (P2) are unaffected. The clip is a
+  precaution, not a measured safeguard: `s11` shows that removing it causes no overflow
+  on the randomized campaign or on the constraint-active fills, where with the fade in
+  place it moves the peak level by at most 0.26 cm. (An earlier figure of 6 % overflows
+  without the clip came from a superseded version of the law and is withdrawn.)
 
 * **Clipping keeps the read-out bounded but also freezes it, which is why the fade
   exists.** On an aggressive fill `s10` found the frozen correction holding +13.6 V while

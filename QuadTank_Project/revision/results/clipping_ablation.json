@@ -1,0 +1,133 @@
+{
+  "config": {
+    "campaign": "s04_stability.constraint_study (n=48, seed=2, T=100 s)",
+    "level_fade": true
+  },
+  "MP": {
+    "guard_on": {
+      "n_tasks": 48,
+      "settling_window_ignored_s": 20.0,
+      "overflow_fraction": 0.0,
+      "dryout_fraction": 0.10416666666666667,
+      "max_level_observed_cm": 15.879136027963158,
+      "min_level_observed_cm": 0.0,
+      "mean_input_saturation_fraction": 0.05981249999999999
+    },
+    "guard_off": {
+      "n_tasks": 48,
+      "settling_window_ignored_s": 20.0,
+      "overflow_fraction": 0.0,
+      "dryout_fraction": 0.10416666666666667,
+      "max_level_observed_cm": 15.879136027963158,
+      "min_level_observed_cm": 0.0,
+      "mean_input_saturation_fraction": 0.05981249999999999
+    }
+  },
+  "NMP": {
+    "guard_on": {
+      "n_tasks": 48,
+      "settling_window_ignored_s": 20.0,
+      "overflow_fraction": 0.0,
+      "dryout_fraction": 0.0,
+      "max_level_observed_cm": 18.497663973911553,
+      "min_level_observed_cm": 0.0017059823053885666,
+      "mean_input_saturation_fraction": 0.043041666666666666
+    },
+    "guard_off": {
+      "n_tasks": 48,
+      "settling_window_ignored_s": 20.0,
+      "overflow_fraction": 0.0,
+      "dryout_fraction": 0.0,
+      "max_level_observed_cm": 18.540177436973316,
+      "min_level_observed_cm": 0.0017502668701394107,
+      "mean_input_saturation_fraction": 0.03532291666666667
+    }
+  },
+  "fills": {
+    "source": "s10_constraint_robustness.SCENARIOS",
+    "MP": {
+      "in_box": {
+        "guard_on": {
+          "peak_level_cm": 14.995,
+          "peak_tank": 2,
+          "overflow": false,
+          "violation_area_cm_s": 0.0,
+          "time_over_limit_s": 0.0,
+          "max_overshoot_above_ref_cm": -0.005,
+          "rmse_h12_cm": 2.995
+        },
+        "guard_off": {
+          "peak_level_cm": 14.995,
+          "peak_tank": 2,
+          "overflow": false,
+          "violation_area_cm_s": 0.0,
+          "time_over_limit_s": 0.0,
+          "max_overshoot_above_ref_cm": -0.005,
+          "rmse_h12_cm": 2.995
+        }
+      },
+      "out_of_box": {
+        "guard_on": {
+          "peak_level_cm": 19.49,
+          "peak_tank": 2,
+          "overflow": false,
+          "violation_area_cm_s": 0.0,
+          "time_over_limit_s": 0.0,
+          "max_overshoot_above_ref_cm": -0.01,
+          "rmse_h12_cm": 3.87
+        },
+        "guard_off": {
+          "peak_level_cm": 19.49,
+          "peak_tank": 2,
+          "overflow": false,
+          "violation_area_cm_s": 0.0,
+          "time_over_limit_s": 0.0,
+          "max_overshoot_above_ref_cm": -0.01,
+          "rmse_h12_cm": 3.87
+        }
+      }
+    },
+    "NMP": {
+      "in_box": {
+        "guard_on": {
+          "peak_level_cm": 16.776,
+          "peak_tank": 1,
+          "overflow": false,
+          "violation_area_cm_s": 0.0,
+          "time_over_limit_s": 0.0,
+          "max_overshoot_above_ref_cm": 1.776,
+          "rmse_h12_cm": 3.348
+        },
+        "guard_off": {
+          "peak_level_cm": 16.515,
+          "peak_tank": 1,
+          "overflow": false,
+          "violation_area_cm_s": 0.0,
+          "time_over_limit_s": 0.0,
+          "max_overshoot_above_ref_cm": 1.515,
+          "rmse_h12_cm": 3.367
+        }
+      },
+      "out_of_box": {
+        "guard_on": {
+          "peak_level_cm": 20.163,
+          "peak_tank": 1,
+          "overflow": true,
+          "violation_area_cm_s": 9.676,
+          "time_over_limit_s": 90.9,
+          "max_overshoot_above_ref_cm": 0.663,
+          "rmse_h12_cm": 4.936
+        },
+        "guard_off": {
+          "peak_level_cm": 20.157,
+          "peak_tank": 1,
+          "overflow": true,
+          "violation_area_cm_s": 9.218,
+          "time_over_limit_s": 89.6,
+          "max_overshoot_above_ref_cm": 0.657,
+          "rmse_h12_cm": 4.946
+        }
+      }
+    }
+  }
+}

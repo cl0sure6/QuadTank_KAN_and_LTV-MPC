@@ -54,6 +54,23 @@ def main():
                 print(f"=== {regime}: feature saturation {'ON' if clip else 'OFF'} ===", flush=True)
                 res = constraint_study({"Symbolic KAN": C.SymbolicLaw(regime)}, reg, DT)
                 out[regime][tag] = res["Symbolic KAN"]
+        # The randomized campaign barely leaves the training box, so the guard
+        # is rarely engaged there. The constraint-active fills of stage 10 are
+        # where it acts -- on the in-box fill 38 % of the feature vector is
+        # pinned at the box edge -- so the same comparison is repeated on them.
+        from s10_constraint_robustness import SCENARIOS, constraint_scenario
+        out["fills"] = {"source": "s10_constraint_robustness.SCENARIOS"}
+        for regime, reg in (("MP", Q.MP), ("NMP", Q.NMP)):
+            out["fills"][regime] = {}
+            for tag, sc in SCENARIOS.items():
+                out["fills"][regime][tag] = {}
+                for clip in (True, False):
+                    PF.CLIP_FEATURES = clip
+                    key = "guard_on" if clip else "guard_off"
+                    print(f"=== {regime} fill to {sc['ref_cm']} cm, guard {'ON' if clip else 'OFF'} ===", flush=True)
+                    res = constraint_scenario(regime, reg, sc["ref_cm"], sc["x0"],
+                                              pols={"Symbolic KAN": C.SymbolicLaw(regime)})
+                    out["fills"][regime][tag][key] = res["controllers"]["Symbolic KAN"]
     finally:
         PF.CLIP_FEATURES = saved
     p = os.path.join(RES, "clipping_ablation.json")
@@ -61,9 +78,14 @@ def main():
         json.dump(out, f, indent=2)
     print("\nwrote", p, flush=True)
     for regime in ("MP", "NMP"):
-        print("  %-4s overflow  guard on %.1f%%   guard off %.1f%%"
+        print("  %-4s randomized campaign overflow  guard on %.1f%%   guard off %.1f%%"
               % (regime, 100 * out[regime]["guard_on"]["overflow_fraction"],
                  100 * out[regime]["guard_off"]["overflow_fraction"]), flush=True)
+        for tag in out["fills"][regime]:
+            f = out["fills"][regime][tag]
+            print("  %-4s %-11s fill  peak/violation  guard on %7.2f cm / %8.2f cm.s   guard off %7.2f cm / %8.2f cm.s"
+                  % (regime, tag, f["guard_on"]["peak_level_cm"], f["guard_on"]["violation_area_cm_s"],
+                     f["guard_off"]["peak_level_cm"], f["guard_off"]["violation_area_cm_s"]), flush=True)
 
 
 if __name__ == "__main__":

@@ -30,7 +30,7 @@ hold for any learned `f` and any bounded `g`.
 | The **symbolic read-out**, not the network, is a dominant error source | MP: a 2.39 % imitation error becomes 7.75 % under off-the-shelf `auto_symbolic`; a convex refit recovers it to 5.44 %. NMP: 4.60 % → 11.23 % → 9.00 % |
 | An unconstrained read-out **violates negative feedback** on up to 11 % of realizable operating points | Driven to ≤ 0.6 % in both regimes by an affine inequality inside a convex least-squares fit. It costs 0.33 pp (MP) and 0.69 pp (NMP) on the full support; at the deployed 4-term MP budget it *improves* accuracy by 2.13 pp |
 | The gate makes **zero steady-state offset and local stability structural** | Substituting random coefficients (σ up to 100) leaves the closed-loop spectral radius unchanged to ~1e-10 |
-| KAN support selection is **not measurably better** than direct sparse regression | Across 11 term budgets × 2 regimes the two curves sit within a few tenths of a percentage point of each other, on every one of 5 training seeds |
+| KAN support selection is **no better** than direct sparse regression | Across 11 term budgets the two curves trade places in MP (largest gap 0.27 pp); in NMP direct sparse regression is better at every budget from 24 terms, by up to 1.36 pp. The largest gaps are identical on all 5 training seeds |
 | The benchmark **cannot justify distillation** | With a horizon that spans the inverse response the MPC beats a well-tuned gain-scheduled LQR by only 6–9 %, so there is little for any approximator to lose |
 
 Deployed law: **4 terms/pump (MP, 38 multiply–accumulates, 6.40 % nMAE)** and
@@ -172,6 +172,7 @@ python s08_key_numbers.py          # <1 min   every number quoted in the prose
 python s04c_cross_channel.py       # ~3 min   own- vs cross-channel derivatives, law vs teacher
 python s09_seed_campaign.py        # ~2.5 h   how much the result depends on the training seed
 python s10_constraint_robustness.py# ~20 min  active state constraint + widened robustness
+python s11_clipping_ablation.py     # ~5 min   overflow with and without feature saturation
 ```
 
 Stage 0 runs first because every later stage inherits the horizon it settles; it is the

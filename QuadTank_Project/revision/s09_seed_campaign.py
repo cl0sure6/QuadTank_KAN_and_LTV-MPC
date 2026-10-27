@@ -129,16 +129,21 @@ def harvest():
         row["deployed_k"] = int(dep["k"])
         row["deployed_nmae"] = round(float(dep["nmae"]), 3)
         row["deployed_flops"] = int(dep["flops"])
-        # does the KAN support beat the OMP support, budget by budget?
-        kan = {c["k"]: c["nmae"] for c in sw[regime]["kan_support_curve"]}
-        pol = {c["k"]: c["nmae"] for c in sw[regime]["direct_polynomial_curve"]}
-        common = sorted(set(kan) & set(pol))
-        wins = sum(1 for k in common if kan[k] < pol[k] - 1e-9)
-        row["budgets_compared"] = len(common)
-        row["kan_wins"] = wins
-        row["omp_wins"] = len(common) - wins
-        row["max_abs_gap_pp"] = round(
-            max((abs(kan[k] - pol[k]) for k in common), default=0.0), 3)
+        # Does the KAN support beat the OMP support, budget by budget? Counted
+        # three ways with the rule shared with stage 8. This used to count every
+        # tie as an OMP win, which overstated the direct support at the small
+        # budgets where both methods select the same monomials.
+        import symbolic as SY
+        cmp_ = SY.compare_supports(sw[regime]["kan_support_curve"],
+                                   sw[regime]["direct_polynomial_curve"])
+        row["budgets_compared"] = len(cmp_["budgets"])
+        row["kan_wins"] = len(cmp_["kan_better_at"])
+        row["omp_wins"] = len(cmp_["direct_better_at"])
+        row["ties"] = len(cmp_["ties_at"])
+        row["max_abs_gap_pp"] = round(cmp_["max_abs_gap_pp"], 3)
+        row["max_omp_lead_pp"] = round(cmp_["max_direct_lead_pp"], 3)
+        # keep the curves, so any count can be re-derived without a re-run
+        row["comparison"] = cmp_
         out[regime] = row
     return out
 
@@ -186,8 +191,10 @@ def summarise(runs):
                     "n_seeds": int(v.size)}
         kw = [x[regime]["kan_wins"] for x in runs.values() if regime in x]
         ow = [x[regime]["omp_wins"] for x in runs.values() if regime in x]
+        tw = [x[regime].get("ties") for x in runs.values() if regime in x]
         r["kan_wins_per_seed"] = kw
         r["omp_wins_per_seed"] = ow
+        r["ties_per_seed"] = tw
         r["kan_ever_dominates"] = bool(any(
             k > 0 and o == 0 for k, o in zip(kw, ow)))
         out[regime] = r
@@ -234,7 +241,8 @@ def main():
             print(f"  {regime} deployed nMAE over {d['n_seeds']} seeds: "
                   f"median {d['median']}  range [{d['min']}, {d['max']}]", flush=True)
             print(f"  {regime} KAN wins per seed {s['kan_wins_per_seed']} "
-                  f"vs OMP {s['omp_wins_per_seed']}", flush=True)
+                  f"vs OMP {s['omp_wins_per_seed']} "
+                  f"ties {s['ties_per_seed']}", flush=True)
 
 
 if __name__ == "__main__":

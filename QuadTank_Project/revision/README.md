@@ -21,6 +21,7 @@ python s08_key_numbers.py          # <1 min   every number quoted in the prose
 python s04c_cross_channel.py       # ~3 min   own- vs cross-channel derivatives, law vs teacher
 python s09_seed_campaign.py        # ~2.5 h   how much the result depends on the training seed
 python s10_constraint_robustness.py# ~20 min  active state constraint + widened robustness
+python s11_clipping_ablation.py     # ~5 min   overflow with and without feature saturation
 ```
 
 `results/key_numbers.json` is the one file to look at if you want to check the
@@ -110,9 +111,15 @@ training reference box, `g ≡ 1` over the whole region the certificate covers.
   references outside the tank — 33.9 % of points did. `symbolic.constraint_points` now
   generates `(x, r)` pairs with `r` an exact equilibrium.
 
-* **The deployed term budget is chosen by the stability certificate**, not by accuracy
-  alone: `s02b` takes the smallest budget certified locally exponentially stable at all
-  six test set-points whose error is within 1 pp of the best certified candidate.
+* **The stability certificate confirms (P2); it does not select the budget.** Every
+  candidate budget is checked at all six test set-points, and every one returns the same
+  spectral radius, as (P2) says it must. `s02b` deploys the smallest budget whose error
+  is within 1 pp of the best candidate on the KAN-selected support.
+
+* **One rule for every support comparison.** `symbolic.compare_supports` counts a
+  difference under 0.05 pp as a tie; stages 8 and 9 both use it, so the KAN-versus-OMP
+  counts quoted in different places cannot disagree. (Stage 9 once counted every tie as
+  a win for the direct support.)
 
 * **Features are clipped to the training box** before the polynomial is evaluated. A
   degree-4 polynomial extrapolates catastrophically outside the region it was fitted on;
@@ -147,8 +154,8 @@ nMAE is relative to the full actuator range (12 V), predictions clipped to the a
 box before scoring.
 
 Two results are negative and are reported as such in the paper: the KAN-selected support
-is not measurably better than one chosen directly by sparse regression at any term
-budget or on any of five training seeds, and on this benchmark the MPC beats a well-tuned gain-scheduled LQR
+is no better than one chosen directly by sparse regression — in the NMP regime it is
+worse, by up to 1.36 pp — and on this benchmark the MPC beats a well-tuned gain-scheduled LQR
 by only 6–9 %, so the plant cannot demonstrate the value of approximating an optimiser.
 
 ## Scope

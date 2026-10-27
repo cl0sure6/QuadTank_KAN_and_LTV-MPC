@@ -27,6 +27,8 @@ import os
 
 import numpy as np
 
+import symbolic as SY
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 RES = os.path.join(HERE, "results")
 DATA = os.path.join(HERE, "data")
@@ -91,13 +93,9 @@ def main():
 
     x = out["kan_vs_direct_polynomial"] = {}
     for r in ("MP", "NMP"):
-        k = {c["k"]: c["nmae"] for c in sw[r]["kan_support_curve"]}
-        p = {c["k"]: c["nmae"] for c in sw[r]["direct_polynomial_curve"]}
-        common = sorted(set(k) & set(p))
-        x[r] = {"kan": {str(i): k[i] for i in common},
-                "direct": {str(i): p[i] for i in common},
-                "kan_better_at": [i for i in common if k[i] < p[i] - 0.05],
-                "direct_better_at": [i for i in common if p[i] < k[i] - 0.05]}
+        # one rule for every count the paper quotes; see symbolic.compare_supports
+        x[r] = SY.compare_supports(sw[r]["kan_support_curve"],
+                                   sw[r]["direct_polynomial_curve"])
 
     s = out["stability"] = {}
     for r in ("MP", "NMP"):

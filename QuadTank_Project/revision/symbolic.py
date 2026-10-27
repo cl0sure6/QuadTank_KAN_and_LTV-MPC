@@ -419,3 +419,36 @@ def shape_rows_for_output(F, support, j, regime):
 def total_sign_violation(c, F, support, j, regime, i=None):
     G, g0 = total_shape_rows(F, support, j, regime, i=i)
     return float(((G @ c + g0) < 0).mean())
+
+
+# ------------------------------------------------- support comparison rule
+# The KAN-selected and directly regressed supports are compared budget by budget
+# on imitation nMAE. A difference smaller than TIE_BAND_PP is a tie: it is below
+# the two-decimal resolution at which the paper quotes errors. Stages 8 and 9
+# both count with this one function, so the counts quoted in different sections
+# of the paper cannot disagree by construction -- they once did, because stage 9
+# counted every tie as a win for the direct support.
+TIE_BAND_PP = 0.05
+
+
+def compare_supports(kan_curve, direct_curve, band=TIE_BAND_PP):
+    """Three-way, budget-by-budget comparison of two sweep curves."""
+    kan = {int(c["k"]): float(c["nmae"]) for c in kan_curve}
+    drc = {int(c["k"]): float(c["nmae"]) for c in direct_curve}
+    common = sorted(set(kan) & set(drc))
+    kan_better = [k for k in common if kan[k] < drc[k] - band]
+    drc_better = [k for k in common if drc[k] < kan[k] - band]
+    ties = [k for k in common if k not in kan_better and k not in drc_better]
+    gaps = [kan[k] - drc[k] for k in common]          # > 0: direct is better
+    return {
+        "tie_band_pp": band,
+        "budgets": common,
+        "kan_better_at": kan_better,
+        "direct_better_at": drc_better,
+        "ties_at": ties,
+        "max_abs_gap_pp": max((abs(g) for g in gaps), default=0.0),
+        "max_direct_lead_pp": max(gaps, default=0.0),
+        "max_kan_lead_pp": max((-g for g in gaps), default=0.0),
+        "kan": {str(k): kan[k] for k in common},
+        "direct": {str(k): drc[k] for k in common},
+    }

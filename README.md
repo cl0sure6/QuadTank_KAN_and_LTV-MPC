@@ -150,6 +150,29 @@ One correction to the commit history, since commit messages are public: the mess
 on a measurement taken under concurrent load and was withdrawn in `7e5a04e`; on an idle
 machine the seed-42 retrain reproduces the baseline to the precision of the result files.
 
+### Second revision (JPROCONT-D-26-00790R2)
+
+The second revision was submitted on 31 October 2026, after a minor-revision decision
+asking for consistency throughout the manuscript. The tag
+[`submitted-jpc-r2-2026-10-31`](https://github.com/cl0sure6/QuadTank_KAN_and_LTV-MPC/tree/submitted-jpc-r2-2026-10-31)
+marks the corresponding state. The revision changed wording, not results; the pipeline
+changes behind it are:
+
+* **One rule for the KAN-versus-OMP comparison.** Stage 8 counted differences under
+  0.05 pp as ties while stage 9 counted every tie as a win for the direct support, so the
+  counts quoted in different sections disagreed. `symbolic.compare_supports` is now the
+  single rule. With it, the direct support is ahead at 4 of 11 budgets in MP and 6 of 11
+  in NMP, where it is better by up to 1.36 pp from 24 terms upward.
+* **`seed_campaign.json` was not regenerated.** A re-run under the corrected rule was
+  stopped part-way for compute reasons, with `models/` restored byte-identical from a
+  snapshot. Its per-seed win counts therefore still use the old rule; the paper no longer
+  quotes them, citing instead the per-seed largest gap between the two curves, which no
+  tie rule affects (0.27 pp MP, 1.36 pp NMP on all five seeds).
+* **`s11_clipping_ablation.py`** re-measures what the feature-saturation guard is worth.
+  The manuscript had quoted 6 % overflows without it, a figure from a superseded version
+  of the law that no stage reproduced. On the paper's own experiments removing the guard
+  causes no overflow, and the claim is withdrawn.
+
 ---
 
 ## Reproducing
